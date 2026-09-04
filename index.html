@@ -3,110 +3,1594 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Agrajay Agam Classes - Spoken English for Beginners">
-<title>Agrajay Agam Classes | Spoken English</title>
+
+<meta name="description" content="Agrajay Agam Classes - Free Spoken English learning website for beginners. Learn English speaking, grammar, vocabulary, listening and daily conversation.">
+
+<title>Agrajay Agam Classes | Learn English & Speak with Confidence</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f8ff;color:#10203b;line-height:1.6}
-header{background:linear-gradient(135deg,#1248b9,#2877ee);color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
-.brand{font-weight:800;font-size:21px}.brand small{display:block;font-size:12px;font-weight:400}
-nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}
-.hero{padding:70px 6%;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center;background:linear-gradient(135deg,#eaf2ff,#fff)}
-h1{font-size:48px;line-height:1.1;margin:10px 0}.hero p{font-size:18px;color:#59677c}
-.btn{display:inline-block;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:bold;border:0;cursor:pointer;margin:6px 5px 0 0}.primary{background:#1557d6;color:white}.secondary{background:white;color:#1557d6;border:1px solid #cbd8f3}
-.box,.card{background:white;border-radius:18px;padding:24px;box-shadow:0 8px 25px #173a7710}
-section{padding:55px 6%}.title{text-align:center;margin-bottom:28px}.title h2{font-size:31px;margin:0}.title p{color:#68758a}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.icon{font-size:30px}
-.practice{background:#10203b;color:white}.practice .title p{color:#c8d1df}.practice .box{max-width:800px;margin:auto;color:#10203b}.answer{display:none;background:#eaf8f1;padding:14px;border-radius:10px;margin-top:15px}.answer.show{display:block}
-footer{background:#0b1629;color:#dce4f0;text-align:center;padding:30px}
-@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;padding:50px 5%}h1{font-size:38px}.grid{grid-template-columns:1fr}section{padding:45px 5%}}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f8ff;
+  color:#10203b;
+  line-height:1.7;
+}
+
+header{
+  background:linear-gradient(135deg,#1248b9,#2877ee);
+  color:white;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 15px #0002;
+}
+
+.brand{
+  font-weight:800;
+  font-size:21px;
+}
+
+.brand small{
+  display:block;
+  font-size:12px;
+  font-weight:400;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+nav a:hover{
+  text-decoration:underline;
+}
+
+.hero{
+  padding:75px 6%;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:35px;
+  align-items:center;
+  background:linear-gradient(135deg,#eaf2ff,#ffffff);
+}
+
+.hero h1{
+  font-size:48px;
+  line-height:1.1;
+  margin:12px 0;
+}
+
+.hero p{
+  font-size:18px;
+  color:#59677c;
+}
+
+.badge{
+  display:inline-block;
+  background:#dce9ff;
+  color:#1248b9;
+  padding:7px 14px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  border:0;
+  cursor:pointer;
+  margin:6px 5px 0 0;
+  font-size:14px;
+}
+
+.primary{
+  background:#1557d6;
+  color:white;
+}
+
+.secondary{
+  background:white;
+  color:#1557d6;
+  border:1px solid #cbd8f3;
+}
+
+.green{
+  background:#15945d;
+  color:white;
+}
+
+.orange{
+  background:#e87516;
+  color:white;
+}
+
+.box,.card{
+  background:white;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 8px 25px #173a7710;
+}
+
+section{
+  padding:60px 6%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:32px;
+}
+
+.title h2{
+  font-size:31px;
+  margin:0;
+}
+
+.title p{
+  color:#68758a;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.icon{
+  font-size:34px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#5c6a7e;
+}
+
+.highlight{
+  border-left:5px solid #1557d6;
+}
+
+.practice{
+  background:#10203b;
+  color:white;
+}
+
+.practice .title p{
+  color:#c8d1df;
+}
+
+.practice .box{
+  max-width:850px;
+  margin:auto;
+  color:#10203b;
+}
+
+.answer{
+  display:none;
+  background:#eaf8f1;
+  padding:16px;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+.answer.show{
+  display:block;
+}
+
+.lesson{
+  margin-top:15px;
+  padding:15px;
+  background:#f4f7fc;
+  border-radius:12px;
+}
+
+.lesson strong{
+  color:#1248b9;
+}
+
+.sentence{
+  background:#eef5ff;
+  border-radius:12px;
+  padding:15px;
+  margin:12px 0;
+}
+
+.sentence .english{
+  font-size:19px;
+  font-weight:bold;
+  color:#123f9c;
+}
+
+.sentence .hindi{
+  color:#5c6675;
+}
+
+.listen{
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
+  background:#15945d;
+  color:white;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.day{
+  border-top:5px solid #1557d6;
+}
+
+.day span{
+  background:#eaf2ff;
+  color:#1557d6;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.quiz-option{
+  padding:12px;
+  background:#f4f7fc;
+  border:1px solid #dce4f1;
+  border-radius:10px;
+  margin:8px 0;
+  cursor:pointer;
+}
+
+.quiz-option:hover{
+  background:#e8f1ff;
+}
+
+.result{
+  margin-top:12px;
+  font-weight:bold;
+}
+
+.vocab{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.word{
+  font-size:20px;
+  font-weight:bold;
+  color:#1248b9;
+}
+
+.meaning{
+  color:#59677c;
+}
+
+.challenge{
+  background:linear-gradient(135deg,#1557d6,#2877ee);
+  color:white;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+}
+
+.challenge p{
+  color:white;
+}
+
+.about{
+  background:#ffffff;
+}
+
+footer{
+  background:#0b1629;
+  color:#dce4f0;
+  text-align:center;
+  padding:35px 20px;
+}
+
+footer a{
+  color:#8db7ff;
+  text-decoration:none;
+}
+
+.small{
+  font-size:13px;
+  color:#748196;
+}
+
+.progress{
+  height:12px;
+  background:#e8edf7;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  width:65%;
+  height:100%;
+  background:#16a36a;
+}
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:55px 5%;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:45px 5%;
+  }
+
+}
+
 </style>
 </head>
+
+
 <body>
+
+
+<!-- HEADER -->
+
 <header>
-<div class="brand">Agrajay Agam Classes<small>Learn English. Speak with Confidence.</small></div>
-<nav><a href="#courses">Courses</a><a href="#practice">Practice</a><a href="#quiz">Quiz</a><a href="#youtube">YouTube</a></nav>
+
+<div class="brand">
+Agrajay Agam Classes
+<small>Learn English. Speak with Confidence.</small>
+</div>
+
+<nav>
+<a href="#courses">Courses</a>
+<a href="#speaking">Speaking</a>
+<a href="#listening">Listening</a>
+<a href="#vocabulary">Vocabulary</a>
+<a href="#quiz">Quiz</a>
+<a href="#youtube">YouTube</a>
+</nav>
+
 </header>
 
+
+
+<!-- HERO -->
+
 <section class="hero">
-<div><b>🗣️ Spoken English for Beginners</b><h1>Speak English with Confidence.</h1>
-<p>Simple lessons, daily speaking practice, listening activities and quizzes — designed for beginners.</p>
-<a class="btn primary" href="#courses">Start Learning</a><a class="btn secondary" href="#practice">Practice Now</a></div>
-<div class="box"><h3>🎯 Today's Goal</h3><p>Complete today's speaking practice.</p><div style="height:10px;background:#e8edf7;border-radius:20px"><div style="width:65%;height:100%;background:#16a36a;border-radius:20px"></div></div><p><b>65% completed</b> 🔥</p></div>
+
+<div>
+
+<span class="badge">🗣️ ENGLISH FOR BEGINNERS</span>
+
+<h1>
+Speak English with Confidence.
+</h1>
+
+<p>
+Learn English step by step with simple lessons, daily-use sentences,
+speaking practice, listening practice, vocabulary and quizzes.
+</p>
+
+<a class="btn primary" href="#courses">
+🚀 Start Learning
+</a>
+
+<a class="btn secondary" href="#speaking">
+🗣️ Practice Speaking
+</a>
+
+</div>
+
+
+<div class="box">
+
+<h2>🎯 Today's English Goal</h2>
+
+<p>
+Learn 5 new sentences and speak them aloud at least three times.
+</p>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<p><b>Daily learning goal: 65%</b> 🔥</p>
+
+<button class="btn green"
+onclick="alert('Great! Now speak today’s sentences aloud.')">
+Complete Today's Goal
+</button>
+
+</div>
+
 </section>
 
-<section id="courses"><div class="title"><h2>Start Your Spoken English Journey</h2><p>Learn a little every day.</p></div>
-<div class="grid">
-<div class="card">
-  <div class="icon">🗣️</div>
-  <h3>Speaking Practice</h3>
-  <p>Practice useful English sentences and everyday conversations.</p>
-  <a class="btn primary" href="#practice">Start Speaking Practice</a>
+
+
+<!-- WHY LEARN -->
+
+<section>
+
+<div class="title">
+
+<h2>Why Learn With Us?</h2>
+
+<p>
+Simple English learning for beginners.
+</p>
+
 </div>
-<div class="card"><div class="icon">🎧</div><h3>Listening Practice</h3><p>Listen to simple English and improve your understanding.</p></div>
-<div class="card"><div class="icon">📝</div><h3>Hindi → English</h3><p>Translate common Hindi sentences into natural English.</p></div>
-<div class="card"><div class="icon">📚</div><h3>Vocabulary</h3><p>Build daily-use vocabulary with simple examples.</p></div>
-<div class="card"><div class="icon">🎯</div><h3>Daily Challenge</h3><p>Complete a small speaking task every day.</p></div>
-<div class="card"><div class="icon">🧠</div><h3>Quick Quiz</h3><p>Test what you have learned.</p></div>
-</div></section>
 
-<section><div class="title"><h2>30-Day Spoken English Course</h2><p>Beginner-friendly lessons.</p></div>
+
 <div class="grid">
-<div class="card"><h3>Day 1 — Self Introduction</h3><p>Introduce yourself in English.</p></div>
-<div class="card"><h3>Day 2 — Greetings</h3><p>Learn everyday greetings.</p></div>
-<div class="card"><h3>Day 3 — At Home</h3><p>Speak about daily activities.</p></div>
-<div class="card"><h3>Day 4 — Daily Routine</h3><p>Talk about your routine.</p></div>
-<div class="card"><h3>Day 5 — Shopping</h3><p>Useful shopping conversations.</p></div>
-<div class="card"><h3>Day 6 — Travel</h3><p>Useful English for travel.</p></div>
-</div></section>
 
-<section id="practice" class="practice"><div class="title"><h2>Today's Speaking Practice</h2><p>Think, speak, and repeat.</p></div>
-<div class="box"><h3>How are you today?</h3><button class="btn primary" onclick="document.getElementById('a').classList.toggle('show')">Show Example</button>
-<div id="a" class="answer">Example: “I am fine, thank you. I am feeling happy today.”</div></div></section>
-
-<section id="quiz"><div class="title"><h2>Quick Quiz</h2><p>Choose the correct sentence.</p></div>
-<div class="grid"><div class="card"><h3>Which is correct?</h3><p>A. I am go to school.</p><p>B. I am going to school.</p><button class="btn primary" onclick="alert('Correct! B is the right answer.')">Check Answer</button></div>
-<div class="card"><h3>Which is correct?</h3><p>A. He plays cricket.</p><p>B. He play cricket.</p><button class="btn primary" onclick="alert('Correct! A is the right answer.')">Check Answer</button></div></div></section>
-
-<section id="youtube"><div class="title"><h2>Learn on YouTube</h2><p>Your YouTube lessons can be connected here.</p></div>
-<div class="card" style="text-align:center">
-  <h3>📺 Agrajay Agam Classes</h3>
-  <p>Watch our English learning videos on YouTube.</p>
-  <a class="btn primary" href="https://youtube.com/@agrajayagamclasses" target="_blank">
-    ▶ Visit YouTube Channel
-  </a>
-</div></section>
 <div class="card">
-  <h3>📚 About Agrajay Agam Classes</h3>
-  <p>
-    Agrajay Agam Classes is an English learning platform for beginners.
-    We help learners improve their English grammar, vocabulary,
-    listening and speaking skills in a simple and easy way.
-  </p>
 
-  <p>
-    🎯 Our goal is to help you learn English confidently and speak
-    English clearly in your daily life.
-  </p>
+<div class="icon">🗣️</div>
 
-  <p><strong>🔑 Key to Success</strong></p>
+<h3>Speak English</h3>
+
+<p>
+Practice useful sentences and conversations that you can use in
+your daily life.
+</p>
+
 </div>
-  <div class="card">
-  <h3>📚 What You Will Learn</h3>
 
-  <p>🗣️ <strong>English Speaking</strong><br>
-  Learn to speak English confidently in daily life.</p>
 
-  <p>📘 <strong>English Grammar</strong><br>
-  Learn grammar rules in a simple and easy way.</p>
+<div class="card">
 
-  <p>🎧 <strong>English Listening Practice</strong><br>
-  Improve your listening and understanding skills.</p>
+<div class="icon">🎧</div>
 
-  <p>📖 <strong>Reading Practice</strong><br>
-  Improve your English reading and pronunciation.</p>
+<h3>Improve Listening</h3>
 
-  <p>💬 <strong>Daily English Conversation</strong><br>
-  Practice useful English sentences for everyday situations.</p>
-  </div>
-<footer><b>Agrajay Agam Classes</b><br>Learn English. Speak with Confidence.<br><small>© 2026 Agrajay Agam Classes</small></footer>
-</body></html>
+<p>
+Listen to simple English sentences and train yourself to understand
+English more easily.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📚</div>
+
+<h3>Learn Step by Step</h3>
+
+<p>
+Start with basic English and gradually move towards better speaking
+and communication.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- COURSES -->
+
+<section id="courses">
+
+<div class="title">
+
+<h2>English Learning Courses</h2>
+
+<p>
+Choose a topic and start learning.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="icon">🗣️</div>
+
+<h3>Speaking Practice</h3>
+
+<p>
+Learn and speak useful everyday English sentences.
+</p>
+
+<a class="btn primary" href="#speaking">
+Start Practice
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎧</div>
+
+<h3>Listening Practice</h3>
+
+<p>
+Listen to simple English sentences and improve your understanding.
+</p>
+
+<a class="btn primary" href="#listening">
+Start Listening
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🇮🇳</div>
+
+<h3>Hindi → English</h3>
+
+<p>
+Learn how to translate common Hindi sentences into natural English.
+</p>
+
+<a class="btn primary" href="#translation">
+Practice Translation
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📖</div>
+
+<h3>Vocabulary</h3>
+
+<p>
+Learn useful daily-use English words with meanings and examples.
+</p>
+
+<a class="btn primary" href="#vocabulary">
+Learn Words
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎯</div>
+
+<h3>Daily Challenge</h3>
+
+<p>
+Complete a small English speaking task every day.
+</p>
+
+<a class="btn primary" href="#challenge">
+Today's Challenge
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🧠</div>
+
+<h3>Quick Quiz</h3>
+
+<p>
+Test your English knowledge with simple questions.
+</p>
+
+<a class="btn primary" href="#quiz">
+Take Quiz
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- 30 DAY COURSE -->
+
+<section>
+
+<div class="title">
+
+<h2>30-Day Spoken English Course</h2>
+
+<p>
+Follow one lesson every day.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card day">
+<span>DAY 1</span>
+<h3>Self Introduction</h3>
+<p>Learn how to introduce yourself.</p>
+
+<div class="lesson">
+
+<p><strong>Example:</strong></p>
+
+<p>
+My name is Rahul. I am from Bihar.
+I am a student. I am learning English.
+</p>
+
+</div>
+</div>
+
+
+<div class="card day">
+<span>DAY 2</span>
+<h3>Greetings</h3>
+
+<p>Learn common greetings.</p>
+
+<div class="lesson">
+
+<p>Hello! How are you?</p>
+<p>I am fine, thank you.</p>
+<p>Nice to meet you.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 3</span>
+
+<h3>At Home</h3>
+
+<p>Talk about things you do at home.</p>
+
+<div class="lesson">
+
+<p>I am at home.</p>
+<p>I am having breakfast.</p>
+<p>I am cleaning my room.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 4</span>
+
+<h3>Daily Routine</h3>
+
+<p>Talk about your everyday routine.</p>
+
+<div class="lesson">
+
+<p>I wake up at six o'clock.</p>
+<p>I brush my teeth.</p>
+<p>I go to work.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 5</span>
+
+<h3>Shopping</h3>
+
+<p>Learn useful shopping sentences.</p>
+
+<div class="lesson">
+
+<p>How much is this?</p>
+<p>I want to buy this shirt.</p>
+<p>Do you have a smaller size?</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 6</span>
+
+<h3>Travel</h3>
+
+<p>Useful English for travelling.</p>
+
+<div class="lesson">
+
+<p>Where is the railway station?</p>
+<p>How much is the ticket?</p>
+<p>When does the train arrive?</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 7</span>
+
+<h3>At School</h3>
+
+<p>Talk about school and classroom.</p>
+
+<div class="lesson">
+
+<p>Open your book.</p>
+<p>Please sit down.</p>
+<p>I have a question.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 8</span>
+
+<h3>Friends</h3>
+
+<p>Talk about your friends.</p>
+
+<div class="lesson">
+
+<p>He is my best friend.</p>
+<p>We study together.</p>
+<p>We play cricket together.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 9</span>
+
+<h3>Food</h3>
+
+<p>Talk about food and eating.</p>
+
+<div class="lesson">
+
+<p>I am hungry.</p>
+<p>I like rice.</p>
+<p>What would you like to eat?</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 10</span>
+
+<h3>Weather</h3>
+
+<p>Talk about the weather.</p>
+
+<div class="lesson">
+
+<p>It is very hot today.</p>
+<p>It is raining.</p>
+<p>The weather is pleasant.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 11</span>
+
+<h3>Work</h3>
+
+<p>Talk about your work.</p>
+
+<div class="lesson">
+
+<p>I go to work every day.</p>
+<p>I am busy today.</p>
+<p>I have a lot of work.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 12</span>
+
+<h3>Future Plans</h3>
+
+<p>Talk about your plans.</p>
+
+<div class="lesson">
+
+<p>I will call you tomorrow.</p>
+<p>I will go there next week.</p>
+<p>I am going to learn English.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 13</span>
+
+<h3>Past Activities</h3>
+
+<div class="lesson">
+
+<p>I went to the market yesterday.</p>
+<p>I watched a movie.</p>
+<p>I met my friend.</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 14</span>
+
+<h3>Making Questions</h3>
+
+<div class="lesson">
+
+<p>What is your name?</p>
+<p>Where do you live?</p>
+<p>What do you do?</p>
+
+</div>
+
+</div>
+
+
+<div class="card day">
+
+<span>DAY 15</span>
+
+<h3>Halfway Challenge</h3>
+
+<div class="lesson">
+
+<p>
+Speak about yourself for one minute without stopping.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SPEAKING PRACTICE -->
+
+<section id="speaking" class="practice">
+
+<div class="title">
+
+<h2>🗣️ Today's Speaking Practice</h2>
+
+<p>
+Read the sentence. Listen. Then speak aloud.
+</p>
+
+</div>
+
+
+<div class="box">
+
+<h3>Topic: My Daily Routine</h3>
+
+
+<div class="sentence">
+
+<div class="english">
+I wake up early in the morning.
+</div>
+
+<div class="hindi">
+मैं सुबह जल्दी उठता हूँ।
+</div>
+
+<button class="listen"
+onclick="speak('I wake up early in the morning.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="sentence">
+
+<div class="english">
+I brush my teeth and take a bath.
+</div>
+
+<div class="hindi">
+मैं अपने दाँत साफ करता हूँ और स्नान करता हूँ।
+</div>
+
+<button class="listen"
+onclick="speak('I brush my teeth and take a bath.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="sentence">
+
+<div class="english">
+I have breakfast with my family.
+</div>
+
+<div class="hindi">
+मैं अपने परिवार के साथ नाश्ता करता हूँ।
+</div>
+
+<button class="listen"
+onclick="speak('I have breakfast with my family.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="sentence">
+
+<div class="english">
+Then I go to work.
+</div>
+
+<div class="hindi">
+फिर मैं काम पर जाता हूँ।
+</div>
+
+<button class="listen"
+onclick="speak('Then I go to work.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="sentence">
+
+<div class="english">
+I come home in the evening.
+</div>
+
+<div class="hindi">
+मैं शाम को घर आता हूँ।
+</div>
+
+<button class="listen"
+onclick="speak('I come home in the evening.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<button class="btn primary"
+onclick="document.getElementById('speakingAnswer').classList.toggle('show')">
+
+💡 Show Speaking Tip
+
+</button>
+
+
+<div id="speakingAnswer" class="answer">
+
+<strong>Speaking Tip:</strong>
+
+<p>
+Do not try to speak very fast. Speak slowly and clearly.
+Repeat each sentence 3 times.
+</p>
+
+<p>
+<strong>Practice:</strong><br>
+First time — Read<br>
+Second time — Look and speak<br>
+Third time — Speak without looking
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- LISTENING -->
+
+<section id="listening">
+
+<div class="title">
+
+<h2>🎧 Listening Practice</h2>
+
+<p>
+Listen to each sentence and repeat it.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Beginner Listening Lesson</h3>
+
+<p>
+Click the button and listen carefully.
+</p>
+
+
+<div class="sentence">
+
+<div class="english">
+Good morning. How are you?
+</div>
+
+<button class="listen"
+onclick="speak('Good morning. How are you?')">
+🔊 Play
+</button>
+
+</div>
+
+
+<div class="sentence">
+
+<div class="english">
+I am fine. Thank you.
+</div>
+
+<button class="listen"
+onclick="speak('I am fine. Thank you.')">
+🔊 Play
+</button>
+
+</div>
+
+
+<div class="sentence">
+
+<div class="english">
+What are you doing?
+</div>
+
+<button class="listen"
+onclick="speak('What are you doing?')">
+🔊 Play
+</button>
+
+</div>
+
+
+<div class="sentence">
+
+<div class="english">
+I am learning English.
+</div>
+
+<button class="listen"
+onclick="speak('I am learning English.')">
+🔊 Play
+</button>
+
+</div>
+
+
+<div class="sentence">
+
+<div class="english">
+I want to improve my English speaking.
+</div>
+
+<button class="listen"
+onclick="speak('I want to improve my English speaking.')">
+🔊 Play
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- TRANSLATION -->
+
+<section id="translation">
+
+<div class="title">
+
+<h2>🇮🇳 Hindi → English Practice</h2>
+
+<p>
+Try to translate before checking the answer.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>1. मैं स्कूल जाता हूँ।</h3>
+
+<button class="btn primary"
+onclick="document.getElementById('t1').classList.toggle('show')">
+Show Answer
+</button>
+
+<div id="t1" class="answer">
+<strong>I go to school.</strong>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>2. वह क्रिकेट खेलता है।</h3>
+
+<button class="btn primary"
+onclick="document.getElementById('t2').classList.toggle('show')">
+Show Answer
+</button>
+
+<div id="t2" class="answer">
+<strong>He plays cricket.</strong>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>3. मैं अंग्रेजी सीख रहा हूँ।</h3>
+
+<button class="btn primary"
+onclick="document.getElementById('t3').classList.toggle('show')">
+Show Answer
+</button>
+
+<div id="t3" class="answer">
+<strong>I am learning English.</strong>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>4. वह बाजार जा रही है।</h3>
+
+<button class="btn primary"
+onclick="document.getElementById('t4').classList.toggle('show')">
+Show Answer
+</button>
+
+<div id="t4" class="answer">
+<strong>She is going to the market.</strong>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>5. मुझे अंग्रेजी बोलनी है।</h3>
+
+<button class="btn primary"
+onclick="document.getElementById('t5').classList.toggle('show')">
+Show Answer
+</button>
+
+<div id="t5" class="answer">
+<strong>I want to speak English.</strong>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>6. क्या आप मेरी मदद कर सकते हैं?</h3>
+
+<button class="btn primary"
+onclick="document.getElementById('t6').classList.toggle('show')">
+Show Answer
+</button>
+
+<div id="t6" class="answer">
+<strong>Can you help me?</strong>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- VOCABULARY -->
+
+<section id="vocabulary">
+
+<div class="title">
+
+<h2>📖 Daily English Vocabulary</h2>
+
+<p>
+Learn useful words every day.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card vocab">
+
+<div>
+
+<div class="word">Improve</div>
+
+<div class="meaning">सुधारना</div>
+
+<p>
+I want to improve my English.
+</p>
+
+</div>
+
+<button class="listen"
+onclick="speak('Improve. I want to improve my English.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="card vocab">
+
+<div>
+
+<div class="word">Confident</div>
+
+<div class="meaning">आत्मविश्वासी</div>
+
+<p>
+I want to become confident.
+</p>
+
+</div>
+
+<button class="listen"
+onclick="speak('Confident. I want to become confident.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="card vocab">
+
+<div>
+
+<div class="word">Practice</div>
+
+<div class="meaning">अभ्यास</div>
+
+<p>
+Practice makes you better.
+</p>
+
+</div>
+
+<button class="listen"
+onclick="speak('Practice. Practice makes you better.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="card vocab">
+
+<div>
+
+<div class="word">Learn</div>
+
+<div class="meaning">सीखना</div>
+
+<p>
+I learn English every day.
+</p>
+
+</div>
+
+<button class="listen"
+onclick="speak('Learn. I learn English every day.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="card vocab">
+
+<div>
+
+<div class="word">Speak</div>
+
+<div class="meaning">बोलना</div>
+
+<p>
+I speak English every day.
+</p>
+
+</div>
+
+<button class="listen"
+onclick="speak('Speak. I speak English every day.')">
+🔊
+</button>
+
+</div>
+
+
+<div class="card vocab">
+
+<div>
+
+<div class="word">Understand</div>
+
+<div class="meaning">समझना</div>
+
+<p>
+I can understand English.
+</p>
+
+</div>
+
+<button class="listen"
+onclick="speak('Understand. I can understand English.')">
+🔊
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- DAILY CHALLENGE -->
+
+<section id="challenge">
+
+<div class="challenge">
+
+<h2>🎯 Today's Speaking Challenge</h2>
+
+<h3>Speak for 60 Seconds</h3>
+
+<p>
+Talk about yourself in English for one minute.
+</p>
+
+<p>
+You can talk about:
+</p>
+
+<p>
+Your name • Your village/city • Your work • Your family •
+Your hobbies • Your goals
+</p>
+
+<button class="btn secondary"
+onclick="alert('Challenge started! Speak in English for 60 seconds. Do not stop.')">
+
+🚀 Start Challenge
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- QUIZ -->
+
+<section id="quiz">
+
+<div class="title">
+
+<h2>🧠 Quick English Quiz</h2>
+
+<p>
+Choose the correct answer.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>Question 1</h3>
+
+<p>Which sentence is correct?</p>
+
+<div class="quiz-option"
+onclick="quizResult('q1','wrong')">
+A. I am go to school.
+</div>
+
+<div class="quiz-option"
+onclick="quizResult('q1','correct')">
+B. I am going to school.
+</div>
+
+<div id="q1" class="result"></div>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Question 2</h3>
+
+<p>Choose the correct sentence.</p>
+
+<div class="quiz-option"
+onclick="quizResult('q2','correct')">
+A. He plays cricket.
+</div>
+
+<div class="quiz-option"
+onclick="quizResult('q2','wrong')">
+B. He play cricket.
+</div>
+
+<div id="q2" class="result"></div>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Question 3</h3>
+
+<p>Translate: "मैं खुश हूँ।"</p>
+
+<div class="quiz-option"
+onclick="quizResult('q3','correct')">
+A. I am happy.
+</div>
+
+<div class="quiz-option"
+onclick="quizResult('q3','wrong')">
+B. I happy.
+</div>
+
+<div id="q3" class="result"></div>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Question 4</h3>
+
+<p>Which word means "सीखना"?</p>
+
+<div class="quiz-option"
+onclick="quizResult('q4','wrong')">
+A. Speak
+</div>
+
+<div class="quiz-option"
+onclick="quizResult('q4','correct')">
+B. Learn
+</div>
+
+<div id="q4" class="result"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="title">
+
+<h2>📚 About 
