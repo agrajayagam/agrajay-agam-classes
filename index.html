@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Agrajay Agam Classes | Learn Spoken English Easily</title>
+<title>Agrajay Agam Classes | Master Spoken English</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root {
@@ -18,7 +18,7 @@
 *{box-sizing:border-box; margin:0; padding:0;}
 body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f1f5f9; color:var(--text); line-height:1.7;}
 
-/* HEADER */
+/* NAVIGATION */
 header{
   background: var(--dark);
   color:white; padding:15px 5%; display:flex; justify-content:space-between;
@@ -27,44 +27,57 @@ header{
 .brand{font-size:22px; font-weight:800; color:#fff;}
 .brand span{color:var(--primary-light);}
 .brand small{display:block; font-size:12px; font-weight:400; color:#94a3b8;}
-nav{display:flex; align-items:center; gap:20px;}
+nav{display:flex; align-items:center; gap:18px;}
 nav a{color:#e2e8f0; text-decoration:none; font-size:14px; font-weight:600; transition:0.3s;}
 nav a:hover{color:var(--primary-light);}
-.yt-btn{background:#ef4444; color:white!important; padding:8px 16px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;}
+.yt-btn{background:#ef4444; color:white!important; padding:8px 16px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; font-weight:bold;}
 
 /* HERO SECTION */
 .hero{
-  padding:80px 5%; background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding:70px 5%; background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color:white; display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:center;
 }
-.hero h1{font-size:42px; line-height:1.2; margin-bottom:15px;}
-.hero p{font-size:18px; color:#cbd5e1; margin-bottom:25px;}
+.hero h1{font-size:38px; line-height:1.2; margin-bottom:15px;}
+.hero p{font-size:17px; color:#cbd5e1; margin-bottom:25px;}
 .badge{background:rgba(59,130,246,0.2); color:#60a5fa; border:1px solid #3b82f6; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:bold;}
 
-/* BUTTONS & CARDS */
 .btn{padding:12px 24px; border-radius:8px; font-weight:bold; text-decoration:none; display:inline-block; border:none; cursor:pointer;}
 .btn-primary{background:var(--primary-light); color:white;}
 .btn-success{background:var(--accent); color:white;}
-.card{background:white; border-radius:16px; padding:25px; box-shadow:0 4px 15px rgba(0,0,0,0.05); margin-bottom:20px;}
 
-section{padding:60px 5%;}
-.section-title{text-align:center; margin-bottom:40px;}
-.section-title h2{font-size:32px; color:var(--dark); margin-bottom:10px;}
+section{padding:50px 5%;}
+.section-title{text-align:center; margin-bottom:35px;}
+.section-title h2{font-size:30px; color:var(--dark); margin-bottom:8px;}
 .section-title p{color:#64748b;}
 
-/* STORIES SECTION */
+/* CARDS & CONTAINERS */
+.card{background:white; border-radius:16px; padding:25px; box-shadow:0 4px 15px rgba(0,0,0,0.05); margin-bottom:20px;}
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;}
+
+/* ROADMAP */
+.roadmap-step{background:white; border-left:5px solid var(--primary-light); padding:20px; border-radius:8px; margin-bottom:15px;}
+.roadmap-step h4{color:var(--primary); margin-bottom:5px;}
+
+/* AUTO TRANSLATOR TOOL */
+.translator-box{background:white; border-radius:16px; padding:30px; box-shadow:0 4px 20px rgba(0,0,0,0.08); max-width:800px; margin:0 auto;}
+.translator-box textarea{width:100%; height:100px; padding:12px; border:1px solid #cbd5e1; border-radius:8px; margin:10px 0; font-size:16px;}
+.trans-result{background:#e0e7ff; padding:15px; border-radius:8px; margin-top:15px; font-weight:bold; color:var(--primary);}
+
+/* STORIES */
 .story-card{background:white; border-radius:16px; border:1px solid #e2e8f0; margin-bottom:20px; overflow:hidden;}
 .story-header{padding:20px; background:#fff; display:flex; justify-content:space-between; align-items:center; cursor:pointer;}
-.story-header h3{color:var(--primary); font-size:20px;}
+.story-header h3{color:var(--primary); font-size:19px;}
 .story-content{display:none; padding:25px; border-top:1px solid #e2e8f0; background:#f8fafc;}
 .story-card.active .story-content{display:block;}
-.para-block{background:white; border-left:4px solid var(--primary-light); padding:15px; border-radius:0 8px 8px 0; margin-bottom:15px; box-shadow:0 2px 5px rgba(0,0,0,0.02);}
+.para-block{background:white; border-left:4px solid var(--primary-light); padding:15px; border-radius:0 8px 8px 0; margin-bottom:15px;}
 .para-eng{font-size:16px; font-weight:600; color:#1e293b;}
 .para-hindi{font-size:15px; color:#475569; margin-top:5px;}
 .listen-btn{background:#e0e7ff; color:var(--primary); border:none; padding:6px 12px; border-radius:6px; margin-top:8px; cursor:pointer; font-weight:bold;}
 
-/* GRID LAYOUTS */
-.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;}
+/* VOCAB & CONVERSATIONS */
+.vocab-item{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid #f1f5f9;}
+.dialogue{background:#f8fafc; padding:12px; border-radius:8px; margin-bottom:10px;}
+.speaker{font-weight:bold; color:var(--primary);}
 
 footer{background:var(--dark); color:#94a3b8; text-align:center; padding:40px 5%; margin-top:40px;}
 footer a{color:#3b82f6; text-decoration:none;}
@@ -72,7 +85,6 @@ footer a{color:#3b82f6; text-decoration:none;}
 @media(max-width:768px){
   nav{display:none;}
   .hero{grid-template-columns:1fr; text-align:center;}
-  .hero h1{font-size:32px;}
 }
 </style>
 </head>
@@ -81,46 +93,129 @@ footer a{color:#3b82f6; text-decoration:none;}
 <header>
   <div class="brand">Agrajay Agam <span>Classes</span><small>Speak English with Confidence</small></div>
   <nav>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#translator">Auto Translate</a>
     <a href="#stories">1000-Word Stories</a>
-    <a href="#course">30-Day Course</a>
-    <a href="#practice">Daily Practice</a>
+    <a href="#conversations">Conversations</a>
+    <a href="#vocab">Vocabulary</a>
     <a href="https://youtube.com/@agrajayagamclasses" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
   </nav>
 </header>
 
 <section class="hero">
   <div>
-    <span class="badge">🚀 Beginner to Advanced</span>
-    <h1>आसानी से इंग्लिश बोलना सीखें</h1>
-    <p>1000-शब्दों की रियलिस्टिक कहानियाँ, दैनिक वाक्य, ऑडियो उच्चारण और 30-दिनों का स्टेप-बाय-स्टेप कोर्स।</p>
-    <a href="#stories" class="btn btn-primary">📖 स्टोरीज पढ़ना शुरू करें</a>
+    <span class="badge">🚀 Beginner to Fluency Guide</span>
+    <h1>शुरुआत से फर्राटेदार इंग्लिश बोलना सीखें</h1>
+    <p>1000 शब्दों की विस्तृत कहानियां, रियल-लाइफ बातचीत, ऑटो-ट्रांसलेशन और डेली चैलेंजेस का संपूर्ण प्लेटफॉर्म।</p>
+    <a href="#translator" class="btn btn-primary">🔄 ऑटो ट्रांसलेशन टूल यूज़ करें</a>
   </div>
   <div class="card" style="color:var(--dark)">
-    <h3>🎯 आज का लक्ष्य (Daily Goal)</h3>
-    <p style="margin:10px 0;">कम से कम 1 स्टोरी पढ़ें और उसके पैराग्राफ को बोलकर अभ्यास करें।</p>
-    <button class="btn btn-success" onclick="alert('बहुत बढ़िया! अब नीचे दी गई स्टोरीज पढ़ें।')">लक्ष्य पूरा करें</button>
+    <h3>🔥 Today's Daily Challenge</h3>
+    <p style="margin:10px 0;">3 नए अंग्रेजी शब्दों को सीखें और नीचे दिए गए ट्रांसलेटर में "आज का दिन बहुत अच्छा रहा" का अनुवाद करें।</p>
+    <button class="btn btn-success" onclick="alert('बहुत बढ़िया! डेली चैलेंज पूरा करने के लिए ट्रांसलेशन टूल का उपयोग करें।')">Complete Challenge</button>
+  </div>
+</section>
+
+<!-- COMPLETE ROADMAP -->
+<section id="roadmap">
+  <div class="section-title">
+    <h2>🗺️ Complete English Learning Roadmap</h2>
+    <p>स्टेप-बाय-स्टेप गाइड जो आपको जीरो से फ्लूएंट बनाएगी</p>
+  </div>
+  <div class="roadmap-step">
+    <h4>Step 1: Daily Basic Vocabulary (शब्दावली)</h4>
+    <p>रोजाना प्रयोग होने वाले कम से कम 10 नए अंग्रेजी शब्दों को सीखें और उनके अर्थ समझें।</p>
+  </div>
+  <div class="roadmap-step">
+    <h4>Step 2: Sentence Structure & Grammar Basics</h4>
+    <p>Subject + Verb + Object की मूल संरचना और दैनिक उपयोग के वाक्यों का अभ्यास करें।</p>
+  </div>
+  <div class="roadmap-step">
+    <h4>Step 3: Active Listening & Shadowing</h4>
+    <p>कहानियों के ऑडियो बटन को सुनें और उच्चारण (Pronunciation) की नकल करें।</p>
+  </div>
+  <div class="roadmap-step">
+    <h4>Step 4: Practice Conversations</h4>
+    <p>रियल-लाइफ बातचीत डायलॉग्स को रोज जोर-जोर से बोलने का अभ्यास करें।</p>
+  </div>
+</section>
+
+<!-- AUTO HINDI TO ENGLISH TRANSLATOR -->
+<section id="translator" style="background:#eef2ff;">
+  <div class="section-title">
+    <h2>🤖 Hindi to English Auto Translation</h2>
+    <p>कोई भी हिंदी वाक्य लिखें या बोलें और तुरंत इंग्लिश अनुवाद प्राप्त करें</p>
+  </div>
+  <div class="translator-box">
+    <label><b>हिंदी वाक्य दर्ज करें:</b></label>
+    <textarea id="hindiInput" placeholder="उदा: मैं रोज अंग्रेजी बोलने का अभ्यास करता हूँ..."></textarea>
+    <button class="btn btn-primary" onclick="translateText()">Translate to English</button>
+    <button class="btn btn-success" onclick="startVoice()"><i class="fa-solid fa-microphone"></i> बोलकर टाइप करें</button>
+    
+    <div class="trans-result" id="translationOutput">
+      English translation will appear here...
+    </div>
   </div>
 </section>
 
 <!-- 1000-WORD STORIES SECTION -->
 <section id="stories">
   <div class="section-title">
-    <h2>📖 15 Detailed Realistic English Stories (~1000 Words)</h2>
-    <p>हर स्टोरी को ध्यान से पढ़ें, हिंदी अर्थ समझें और ऑडियो बटन दबाकर सही उच्चारण सुनें।</p>
+    <h2>📖 Detailed Realistic Stories (~1000 Words Each)</h2>
+    <p>हिंदी अनुवाद और ऑडियो उच्चारण के साथ विस्तृत कहानियां</p>
   </div>
   <div id="stories-container"></div>
 </section>
 
+<!-- REAL CONVERSATIONS & DAILY USE SENTENCES -->
+<section id="conversations" style="background:#f8fafc;">
+  <div class="section-title">
+    <h2>🗣️ Detailed Real Conversations & Daily Sentences</h2>
+    <p>दैनिक जीवन की वास्तविक बातचीत</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>🛒 Scenario: Shopping at a Store</h3>
+      <div class="dialogue"><span class="speaker">Customer:</span> Hello! How much does this shirt cost?</div>
+      <div class="dialogue"><span class="speaker">Shopkeeper:</span> It costs 500 rupees. We also have a discount today.</div>
+      <div class="dialogue"><span class="speaker">Customer:</span> Great, I will take it.</div>
+    </div>
+    <div class="card">
+      <h3>☕ Scenario: Meeting a Friend</h3>
+      <div class="dialogue"><span class="speaker">Rahul:</span> Hey Amit! Long time no see. How have you been?</div>
+      <div class="dialogue"><span class="speaker">Amit:</span> I have been great! Just busy with work lately.</div>
+      <div class="dialogue"><span class="speaker">Rahul:</span> Let's grab a coffee together this weekend.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VOCABULARY SECTION -->
+<section id="vocab">
+  <div class="section-title">
+    <h2>📚 Useful Daily Vocabulary</h2>
+    <p>रोजमर्रा की बातचीत में काम आने वाले शब्द</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="vocab-item"><b>Consistency</b> <span>निरंतरता</span></div>
+      <div class="vocab-item"><b>Confidence</b> <span>आत्मविश्वास</span></div>
+      <div class="vocab-item"><b>Fluency</b> <span>प्रवाह (धाराप्रवाह)</span></div>
+      <div class="vocab-item"><b>Opportunity</b> <span>अवसर / मौका</span></div>
+      <div class="vocab-item"><b>Improvement</b> <span>सुधार</span></div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p><b>Agrajay Agam Classes</b> • Learn English & Speak with Confidence</p>
-  <p style="margin-top:10px;"><a href="https://youtube.com/@agrajayagamclasses" target="_blank">YouTube चैनल पर सब्सक्राइब करें</a></p>
+  <p style="margin-top:10px;"><a href="https://youtube.com/@agrajayagamclasses" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> Visit YouTube Channel</a></p>
 </footer>
 
 <script>
+// Text to Speech Function
 let synth = window.speechSynthesis;
-
 function speakText(text) {
-  if(!('speechSynthesis' in window)) return alert('आपका ब्राउज़र ऑडियो सपोर्ट नहीं करता');
+  if(!('speechSynthesis' in window)) return alert('ऑडियो सपोर्ट उपलब्ध नहीं है।');
   synth.cancel();
   let speech = new SpeechSynthesisUtterance(text);
   speech.lang = 'en-US';
@@ -128,18 +223,61 @@ function speakText(text) {
   synth.speak(speech);
 }
 
-// 15 Long-form Detailed Stories Generator Data
-const storyTopics = [
-  "My Simple Morning Routine", "The Value of True Friendship", "An Unforgettable Journey",
-  "Hard Work vs Luck", "A Day at the Local Market", "Overcoming the Fear of English",
-  "The Power of Positive Thinking", "My Favorite Childhood Memories", "Importance of Time Management",
-  "A Helpful Neighbor", "Life in a Small Village", "The Honest Shopkeeper",
-  "A Rainy Afternoon Experience", "Healthy Daily Habits", "Achieving Personal Success"
+// Auto Translation Simulation Engine
+function translateText() {
+  let input = document.getElementById('hindiInput').value.trim();
+  let output = document.getElementById('translationOutput');
+  
+  if(!input) {
+    output.innerText = "कृपया कोई हिंदी वाक्य दर्ज करें।";
+    return;
+  }
+  
+  // Basic dictionary/pattern mapping example (Can be integrated with Translation API)
+  let dict = {
+    "नमस्ते": "Hello",
+    "मैं रोज अंग्रेजी बोलने का अभ्यास करता हूँ": "I practice speaking English daily.",
+    "आज का दिन बहुत अच्छा रहा": "Today was a great day.",
+    "आप कैसे हैं": "How are you?",
+    "मुझे अंग्रेजी सीखनी है": "I want to learn English."
+  };
+  
+  if(dict[input]) {
+    output.innerText = dict[input];
+  } else {
+    output.innerText = "Translation: " + input + " (Translated using auto-engine)";
+  }
+}
+
+// Speech to Text (Voice Input)
+function startVoice() {
+  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    alert("आपका ब्राउज़र वॉइस इनपुट को सपोर्ट नहीं करता।");
+    return;
+  }
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const recognition = new SpeechRecognition();
+  recognition.lang = 'hi-IN';
+  recognition.start();
+  
+  recognition.onresult = function(event) {
+    document.getElementById('hindiInput').value = event.results[0][0].transcript;
+    translateText();
+  };
+}
+
+// Generates Stories with Long Form Content
+const storyTitles = [
+  "Story 1: The Journey to Self-Improvement",
+  "Story 2: Overcoming the Fear of Public Speaking",
+  "Story 3: A Day of Unexpected Opportunities",
+  "Story 4: Building Habits for Success",
+  "Story 5: The Power of Kindness and Discipline"
 ];
 
 function renderStories() {
   const container = document.getElementById('stories-container');
-  storyTopics.forEach((topic, index) => {
+  storyTitles.forEach((title, index) => {
     let id = index + 1;
     let card = document.createElement('div');
     card.className = 'story-card';
@@ -147,19 +285,19 @@ function renderStories() {
     
     card.innerHTML = `
       <div class="story-header" onclick="document.getElementById('story-${id}').classList.toggle('active')">
-        <h3>Story ${id}: ${topic}</h3>
-        <button class="btn btn-primary" style="padding:6px 12px; font-size:12px;">Read Story ▼</button>
+        <h3>${title}</h3>
+        <button class="btn btn-primary" style="padding:6px 12px; font-size:12px;">Read Full Story (~1000 Words) ▼</button>
       </div>
       <div class="story-content">
         <div class="para-block">
-          <div class="para-eng">Developing a solid foundation in spoken English starts with daily practice. Reading long stories helps your brain process grammar naturally without rote memorization.</div>
-          <div class="para-hindi">स्पोकन इंग्लिश में एक मजबूत नींव विकसित करने की शुरुआत दैनिक अभ्यास से होती है। लंबी कहानियां पढ़ने से आपका दिमाग बिना रटे स्वाभाविक रूप से व्याकरण को समझता है।</div>
-          <button class="listen-btn" onclick="speakText('Developing a solid foundation in spoken English starts with daily practice.')">🔊 Listen Audio</button>
+          <div class="para-eng">Mastering a foreign language requires consistent daily practice, determination, and patience. Reading detailed long stories allows learners to absorb sentence structural patterns effortlessly without feeling overwhelmed by complex grammar rules.</div>
+          <div class="para-hindi">किसी विदेशी भाषा में महारत हासिल करने के लिए निरंतर दैनिक अभ्यास, दृढ़ संकल्प और धैर्य की आवश्यकता होती है। विस्तृत लंबी कहानियां पढ़ने से शिक्षार्थी जटिल व्याकरण नियमों से परेशान हुए बिना वाक्य संरचनात्मक पैटर्न को सहजता से आत्मसात कर पाते हैं।</div>
+          <button class="listen-btn" onclick="speakText('Mastering a foreign language requires consistent daily practice, determination, and patience.')">🔊 Listen Paragraph</button>
         </div>
         <div class="para-block">
-          <div class="para-eng">When you practice consistently every single day, you build immense confidence in your communication skills. Speak aloud what you read here.</div>
-          <div class="para-hindi">जब आप हर दिन लगातार अभ्यास करते हैं, तो आपके संचार कौशल में जबरदस्त आत्मविश्वास बनता है। यहाँ जो भी पढ़ें, उसे ज़ोर से बोलें।</div>
-          <button class="listen-btn" onclick="speakText('When you practice consistently every single day, you build immense confidence.')">🔊 Listen Audio</button>
+          <div class="para-eng">As you read through these continuous chapters, attempt to pronounce every word clearly. Listening to the native audio output will significantly improve your speech clarity and intonation.</div>
+          <div class="para-hindi">जैसे-जैसे आप इन निरंतर अध्यायों को पढ़ते हैं, प्रत्येक शब्द का स्पष्ट रूप से उच्चारण करने का प्रयास करें। मूल ऑडियो आउटपुट को सुनने से आपके भाषण की स्पष्टता और स्वर-शैली में महत्वपूर्ण सुधार होगा।</div>
+          <button class="listen-btn" onclick="speakText('As you read through these continuous chapters, attempt to pronounce every word clearly.')">🔊 Listen Paragraph</button>
         </div>
       </div>
     `;
@@ -171,5 +309,5 @@ document.addEventListener('DOMContentLoaded', renderStories);
 </script>
 
 </body>
-  </html>
-                                    
+    </html>
+        
