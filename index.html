@@ -56,6 +56,7 @@ nav a{color:#f0fdf4; text-decoration:none; font-size:13px; font-weight:600;}
 }
 .btn-yellow{background:var(--brand-yellow); color:#713f12;}
 .btn-green{background:var(--light-green); color:white;}
+.btn-danger{background:#ef4444; color:white;}
 .btn-speaker{background:var(--bg-yellow); color:var(--dark-yellow); border:1px solid var(--brand-yellow); width:100%; margin-top:10px;}
 
 .trans-result{
@@ -75,7 +76,7 @@ section{padding:35px 4%;}
 }
 .chat-log{
   background:#f8fafc; padding:12px; border-radius:10px; font-size:14px;
-  text-align:left; max-height:180px; overflow-y:auto; margin:15px 0; border:1px solid #e2e8f0;
+  text-align:left; max-height:200px; overflow-y:auto; margin:15px 0; border:1px solid #e2e8f0;
 }
 
 /* ROADMAP */
@@ -142,25 +143,30 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
   </div>
 </section>
 
-<!-- 2. AI SPEAKING PARTNER (SARAH) -->
+<!-- 2. AI SPEAKING PARTNER (SARAH) - CONTINUOUS TALK -->
 <section id="ai-partner" style="background:var(--bg-yellow); border-bottom:3px solid var(--brand-yellow);">
   <div class="section-title">
-    <h2>🗣️ Talk to Your AI English Partner (Sarah)</h2>
-    <p>अकेले अभ्यास करें! AI ट्यूटर 'Sarah' से इंग्लिश में सवाल-जवाब करें</p>
+    <h2>🗣️ Continuous Talk with AI Partner (Sarah)</h2>
+    <p>एक बार बटन दबाएं और Sarah से लगातार लाइव इंग्लिश में बात करें!</p>
   </div>
 
   <div class="ai-partner-card">
     <div style="font-size:45px;">👩‍🏫</div>
     <h3 style="color:var(--brand-green);">Sarah (AI English Tutor)</h3>
-    <p id="aiStatus" style="font-size:13px; color:#64748b; margin-top:4px;">"Click the button to start conversation!"</p>
+    <p id="aiStatus" style="font-size:13px; color:#64748b; margin-top:4px;">"Click 'Start Conversation' to talk freely!"</p>
     
     <div class="chat-log" id="chatLog">
-      <b>Sarah:</b> Hello! How are you doing today? Ready to practice speaking English?
+      <b>Sarah:</b> Hello! How are you doing today? Ready to practice English?
     </div>
 
-    <button id="startTalkBtn" class="btn btn-yellow" style="width:100%; font-size:15px;" onclick="startAITalk()">
-      🎙️ Tap to Speak (बोलना शुरू करें)
-    </button>
+    <div class="btn-group">
+      <button id="startTalkBtn" class="btn btn-yellow" style="font-size:15px;" onclick="toggleContinuousTalk()">
+        🎙️ Start Continuous Talk
+      </button>
+      <button id="stopTalkBtn" class="btn btn-danger" style="font-size:15px; display:none;" onclick="stopContinuousTalk()">
+        🛑 Stop Conversation
+      </button>
+    </div>
   </div>
 </section>
 
@@ -180,7 +186,7 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
   </div>
   <div class="roadmap-step">
     <h4>Step 3: Talk to AI Partner & Read Stories</h4>
-    <p>Sarah से रोज़ 10 मिनट बात करें और नीचे दी गई कहानियों का उच्चारण सुनें।</p>
+    <p>Sarah से रोज़ 10 मिनट लगातार बात करें और कहानियों का उच्चारण सुनें।</p>
   </div>
 </section>
 
@@ -234,7 +240,7 @@ async function translateText() {
 // VOICE INPUT FOR TRANSLATOR
 function startVoice() {
   if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    alert("आपके मोबाइल/ब्राउज़र में माइक सपोर्ट उपलब्ध नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
+    alert("आपके ब्राउज़र में माइक सपोर्ट उपलब्ध नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
     return;
   }
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -253,57 +259,103 @@ function startVoice() {
   };
 }
 
-// AI SPEAKING PARTNER (SARAH) LOGIC
-function startAITalk() {
+// CONTINUOUS AI TALKING SYSTEM LOGIC
+let isTalkActive = false;
+let recognitionInstance = null;
+
+function toggleContinuousTalk() {
   if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    alert("आपके मोबाइल/ब्राउज़र में माइक सपोर्ट उपलब्ध नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
+    alert("आपके ब्राउज़र में माइक सपोर्ट नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
     return;
   }
 
+  isTalkActive = true;
+  document.getElementById('startTalkBtn').style.display = "none";
+  document.getElementById('stopTalkBtn').style.display = "inline-flex";
+  
+  listenUser();
+}
+
+function stopContinuousTalk() {
+  isTalkActive = false;
+  if(recognitionInstance) {
+    recognitionInstance.stop();
+  }
+  window.speechSynthesis.cancel();
+  
+  document.getElementById('startTalkBtn').style.display = "inline-flex";
+  document.getElementById('stopTalkBtn').style.display = "none";
+  document.getElementById('aiStatus').innerText = "Conversation stopped. Click start to talk again!";
+}
+
+function listenUser() {
+  if (!isTalkActive) return;
+
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognition = new SpeechRecognition();
-  recognition.lang = 'en-US'; // User speaks in English
+  recognitionInstance = new SpeechRecognition();
+  recognitionInstance.lang = 'en-US';
   
   let status = document.getElementById('aiStatus');
   let chatLog = document.getElementById('chatLog');
 
-  status.innerText = "🎧 Listening... Speak in English now!";
-  recognition.start();
+  status.innerText = "🎧 Listening... Speak now in English!";
+  
+  try {
+    recognitionInstance.start();
+  } catch(e) {}
 
-  recognition.onresult = function(event) {
+  recognitionInstance.onresult = function(event) {
     let userSpeech = event.results[0][0].transcript;
     chatLog.innerHTML += `<br><b>You:</b> ${userSpeech}`;
     status.innerText = "🤔 Sarah is thinking...";
     
+    let aiReply = getAIReply(userSpeech);
     setTimeout(() => {
-      let aiReply = getAIReply(userSpeech);
       chatLog.innerHTML += `<br><b>Sarah:</b> ${aiReply}`;
       chatLog.scrollTop = chatLog.scrollHeight;
       
-      let speech = new SpeechSynthesisUtterance(aiReply);
-      speech.lang = 'en-US';
-      speech.rate = 0.85;
-      window.speechSynthesis.speak(speech);
-      
-      status.innerText = "Tap button again to continue speaking!";
-    }, 800);
+      speakAIReply(aiReply);
+    }, 600);
   };
 
-  recognition.onerror = function() {
-    status.innerText = "Couldn't hear clearly. Please tap and speak again!";
+  recognitionInstance.onerror = function() {
+    if(isTalkActive) {
+      setTimeout(listenUser, 1000);
+    }
   };
+  
+  recognitionInstance.onend = function() {
+    // Handled inside speakAIReply completion
+  };
+}
+
+function speakAIReply(text) {
+  window.speechSynthesis.cancel();
+  let speech = new SpeechSynthesisUtterance(text);
+  speech.lang = 'en-US';
+  speech.rate = 0.88;
+  
+  document.getElementById('aiStatus').innerText = "🗣️ Sarah is speaking...";
+  
+  speech.onend = function() {
+    if (isTalkActive) {
+      setTimeout(listenUser, 500); // Auto restart listening after Sarah finishes
+    }
+  };
+  
+  window.speechSynthesis.speak(speech);
 }
 
 function getAIReply(input) {
   let text = input.toLowerCase();
-  if(text.includes("hello") || text.includes("hi")) return "Hello! How was your day today?";
-  if(text.includes("fine") || text.includes("good")) return "Glad to hear that! What are your plans for tomorrow?";
-  if(text.includes("name")) return "My name is Sarah! I am your AI English practice partner.";
-  if(text.includes("learn") || text.includes("english")) return "You are doing great! Daily speaking practice is the key to fluency.";
-  return "That's interesting! Tell me more about it in English.";
+  if(text.includes("hello") || text.includes("hi")) return "Hello! How is your day going?";
+  if(text.includes("fine") || text.includes("good")) return "That's awesome! What is your favorite hobby?";
+  if(text.includes("name")) return "My name is Sarah, your continuous English practice tutor.";
+  if(text.includes("learn") || text.includes("english")) return "Continuous speaking practice is the best way to become confident!";
+  return "That sounds interesting! Can you tell me more about it?";
 }
 
-// SPEECH AUDIO ENGINE
+// SPEECH AUDIO ENGINE FOR TRANSLATOR & STORIES
 let synth = window.speechSynthesis;
 function speakTranslatedText() {
   let text = document.getElementById('translationOutput').innerText;
