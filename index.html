@@ -32,7 +32,7 @@ nav{display:flex; align-items:center; gap:12px;}
 nav a{color:#f0fdf4; text-decoration:none; font-size:13px; font-weight:600;}
 .yt-btn{background:#ef4444; color:white!important; padding:6px 12px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:bold;}
 
-/* TRANSLATOR SECTION (TOP) */
+/* TRANSLATOR SECTION */
 .translator-section{
   background: linear-gradient(135deg, #166534 0%, #15803d 100%);
   padding:25px 4%; color:white; border-bottom: 5px solid var(--brand-yellow);
@@ -74,9 +74,16 @@ section{padding:35px 4%;}
   max-width:700px; margin:0 auto; background:white; padding:20px; border-radius:16px;
   box-shadow:0 8px 20px rgba(0,0,0,0.06); border:2px solid var(--brand-yellow); text-align:center;
 }
+
+.avatar-container {
+  width: 100px; height: 100px; margin: 0 auto 10px auto; border-radius: 50%;
+  overflow: hidden; border: 4px solid var(--brand-green); box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.avatar-container img { width: 100%; height: 100%; object-fit: cover; }
+
 .chat-log{
   background:#f8fafc; padding:12px; border-radius:10px; font-size:14px;
-  text-align:left; max-height:200px; overflow-y:auto; margin:15px 0; border:1px solid #e2e8f0;
+  text-align:left; max-height:220px; overflow-y:auto; margin:15px 0; border:1px solid #e2e8f0;
 }
 
 /* ROADMAP */
@@ -143,20 +150,22 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
   </div>
 </section>
 
-<!-- 2. AI SPEAKING PARTNER (SARAH) - CONTINUOUS TALK -->
+<!-- 2. AI SPEAKING PARTNER (SARAH) - CONTINUOUS & GRAMMAR TEACHER -->
 <section id="ai-partner" style="background:var(--bg-yellow); border-bottom:3px solid var(--brand-yellow);">
   <div class="section-title">
-    <h2>🗣️ Continuous Talk with AI Partner (Sarah)</h2>
-    <p>एक बार बटन दबाएं और Sarah से लगातार लाइव इंग्लिश में बात करें!</p>
+    <h2>🗣️ Continuous Talk with AI Teacher (Sarah)</h2>
+    <p>एक बार बटन दबाएं, Sarah आपकी ग्रामर मिस्टेक्स को सुधारेगी और लगातार बात करेगी!</p>
   </div>
 
   <div class="ai-partner-card">
-    <div style="font-size:45px;">👩‍🏫</div>
+    <div class="avatar-container">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&auto=format&fit=crop&q=80" alt="Sarah English Teacher">
+    </div>
     <h3 style="color:var(--brand-green);">Sarah (AI English Tutor)</h3>
-    <p id="aiStatus" style="font-size:13px; color:#64748b; margin-top:4px;">"Click 'Start Conversation' to talk freely!"</p>
+    <p id="aiStatus" style="font-size:13px; color:#64748b; margin-top:4px;">"Click 'Start Continuous Talk' to learn freely!"</p>
     
     <div class="chat-log" id="chatLog">
-      <b>Sarah:</b> Hello! How are you doing today? Ready to practice English?
+      <b>Sarah:</b> Hello! I am your English teacher. Speak freely, and I will guide you with correct grammar!
     </div>
 
     <div class="btn-group">
@@ -190,10 +199,10 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
   </div>
 </section>
 
-<!-- 4. 1000-WORD STORIES SECTION -->
+<!-- 4. STORIES SECTION -->
 <section id="stories">
   <div class="section-title">
-    <h2>📖 Detailed Realistic Stories (~1000 Words Each)</h2>
+    <h2>📖 Detailed Realistic Stories</h2>
     <p>पैराग्राफ-दर-पैराग्राफ हिंदी अनुवाद और ऑडियो के साथ</p>
   </div>
   <div id="stories-container"></div>
@@ -205,7 +214,7 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
 </footer>
 
 <script>
-// AUTO TRANSLATOR FUNCTION
+// TRANSLATOR
 async function translateText() {
   let input = document.getElementById('hindiInput').value.trim();
   let output = document.getElementById('translationOutput');
@@ -237,19 +246,16 @@ async function translateText() {
   }
 }
 
-// VOICE INPUT FOR TRANSLATOR
 function startVoice() {
   if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    alert("आपके ब्राउज़र में माइक सपोर्ट उपलब्ध नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
+    alert("आपके ब्राउज़र में माइक सपोर्ट नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
     return;
   }
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const recognition = new SpeechRecognition();
   recognition.lang = 'hi-IN';
   
-  let output = document.getElementById('translationOutput');
-  output.innerText = "सुन रहा हूँ... बोलिए!";
-  
+  document.getElementById('translationOutput').innerText = "सुन रहा हूँ... बोलिए!";
   recognition.start();
   
   recognition.onresult = function(event) {
@@ -259,7 +265,56 @@ function startVoice() {
   };
 }
 
-// CONTINUOUS AI TALKING SYSTEM LOGIC
+// SMART AI TEACHER ENGINE (GRAMMAR CORRECTION + DYNAMIC REPLIES)
+function getAIReply(input) {
+  let text = input.toLowerCase().trim();
+
+  // 1. GRAMMAR CORRECTIONS
+  if (text.includes("i is") || text.includes("i are")) {
+    return "Grammar Tip: With 'I', always use 'am'. Say 'I am' instead of 'I is'. Try saying it correctly!";
+  }
+  if (text.includes("he go") || text.includes("she go")) {
+    return "Quick Rule: For 'He' or 'She', use 'goes' in the present tense. Say 'He goes' or 'She goes'. Try again!";
+  }
+  if (text.includes("i am agree")) {
+    return "Correction: Instead of 'I am agree', simply say 'I agree'. Repeat after me: 'I agree'!";
+  }
+  if (text.includes("yesterday i go") || text.includes("yesterday i see")) {
+    return "Past Tense Check: For past events like yesterday, use past verbs like 'went' or 'saw'. Try saying that sentence in past tense!";
+  }
+  if (text.includes("me and my friend")) {
+    return "Grammar Note: It is polite to say 'My friend and I' instead of 'Me and my friend'. Try using that!";
+  }
+
+  // 2. CONVERSATIONAL REPLIES
+  if (text.includes("hello") || text.includes("hi") || text.includes("hey")) {
+    return "Hello there! How are you doing today? What would you like to practice?";
+  }
+  if (text.includes("fine") || text.includes("good") || text.includes("great")) {
+    return "That's fantastic! Tell me, what did you do today?";
+  }
+  if (text.includes("who are you") || text.includes("your name")) {
+    return "I am Sarah, your AI English teacher. I am here to help you speak fluent and correct English!";
+  }
+  if (text.includes("english") || text.includes("learn") || text.includes("practice")) {
+    return "Practicing daily is the secret to fluency! What is the most difficult topic for you in English?";
+  }
+  if (text.includes("food") || text.includes("eat") || text.includes("lunch") || text.includes("dinner")) {
+    return "Sounds delicious! What is your favorite meal to eat?";
+  }
+
+  // 3. DYNAMIC FALLBACKS
+  let fallbacks = [
+    "Your sentence structure looks good! What else would you like to share?",
+    "Great effort! Keep speaking to gain confidence. Tell me more about your day.",
+    "That makes sense! How do you usually practice English at home?",
+    "Nice sentence! Let's continue speaking. What are your plans for tomorrow?"
+  ];
+
+  return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+}
+
+// CONTINUOUS VOICE SYSTEM
 let isTalkActive = false;
 let recognitionInstance = null;
 
@@ -315,17 +370,13 @@ function listenUser() {
       chatLog.scrollTop = chatLog.scrollHeight;
       
       speakAIReply(aiReply);
-    }, 600);
+    }, 500);
   };
 
   recognitionInstance.onerror = function() {
     if(isTalkActive) {
       setTimeout(listenUser, 1000);
     }
-  };
-  
-  recognitionInstance.onend = function() {
-    // Handled inside speakAIReply completion
   };
 }
 
@@ -339,23 +390,14 @@ function speakAIReply(text) {
   
   speech.onend = function() {
     if (isTalkActive) {
-      setTimeout(listenUser, 500); // Auto restart listening after Sarah finishes
+      setTimeout(listenUser, 500);
     }
   };
   
   window.speechSynthesis.speak(speech);
 }
 
-function getAIReply(input) {
-  let text = input.toLowerCase();
-  if(text.includes("hello") || text.includes("hi")) return "Hello! How is your day going?";
-  if(text.includes("fine") || text.includes("good")) return "That's awesome! What is your favorite hobby?";
-  if(text.includes("name")) return "My name is Sarah, your continuous English practice tutor.";
-  if(text.includes("learn") || text.includes("english")) return "Continuous speaking practice is the best way to become confident!";
-  return "That sounds interesting! Can you tell me more about it?";
-}
-
-// SPEECH AUDIO ENGINE FOR TRANSLATOR & STORIES
+// AUDIO ENGINE FOR TRANSLATOR & STORIES
 let synth = window.speechSynthesis;
 function speakTranslatedText() {
   let text = document.getElementById('translationOutput').innerText;
