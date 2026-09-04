@@ -7,12 +7,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root {
-  --primary-green: #0d6efd; /* Accent fallback */
-  --brand-green: #15803d;  /* Deep Green */
-  --light-green: #22c55e;  /* Bright Green */
-  --brand-yellow: #facc15; /* Vibrant Yellow */
-  --dark-yellow: #ca8a04;  /* Darker Yellow for text */
-  --bg-yellow: #fefce8;    /* Light Yellow Background */
+  --brand-green: #15803d;  
+  --light-green: #22c55e;  
+  --brand-yellow: #facc15; 
+  --dark-yellow: #ca8a04;  
+  --bg-yellow: #fefce8;    
   --dark: #0f172a;
   --text: #1e293b;
 }
@@ -33,7 +32,7 @@ nav{display:flex; align-items:center; gap:12px;}
 nav a{color:#f0fdf4; text-decoration:none; font-size:13px; font-weight:600;}
 .yt-btn{background:#ef4444; color:white!important; padding:6px 12px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:bold;}
 
-/* TRANSLATOR SECTION (PLACED ON TOP) */
+/* TRANSLATOR SECTION (TOP) */
 .translator-section{
   background: linear-gradient(135deg, #166534 0%, #15803d 100%);
   padding:25px 4%; color:white; border-bottom: 5px solid var(--brand-yellow);
@@ -44,7 +43,7 @@ nav a{color:#f0fdf4; text-decoration:none; font-size:13px; font-weight:600;}
 }
 .translator-box label{font-weight:bold; font-size:14px; color:var(--brand-green); display:block; margin-bottom:8px;}
 .translator-box textarea{
-  width:100%; height:90px; padding:12px; border:2px solid #cbd5e1; border-radius:10px;
+  width:100%; height:85px; padding:12px; border:2px solid #cbd5e1; border-radius:10px;
   font-size:15px; outline:none; resize:none; font-family:inherit;
 }
 .translator-box textarea:focus{border-color:var(--light-green);}
@@ -64,14 +63,24 @@ nav a{color:#f0fdf4; text-decoration:none; font-size:13px; font-weight:600;}
   margin-top:15px; min-height:60px; font-weight:600; color:var(--brand-green); font-size:16px; word-break:break-word;
 }
 
-section{padding:40px 4%;}
-.section-title{text-align:center; margin-bottom:25px;}
-.section-title h2{font-size:24px; color:var(--brand-green); margin-bottom:5px;}
-.section-title p{color:#64748b; font-size:14px;}
+section{padding:35px 4%;}
+.section-title{text-align:center; margin-bottom:20px;}
+.section-title h2{font-size:22px; color:var(--brand-green); margin-bottom:5px;}
+.section-title p{color:#64748b; font-size:13px;}
+
+/* AI SPEAKING PARTNER BOX */
+.ai-partner-card{
+  max-width:700px; margin:0 auto; background:white; padding:20px; border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06); border:2px solid var(--brand-yellow); text-align:center;
+}
+.chat-log{
+  background:#f8fafc; padding:12px; border-radius:10px; font-size:14px;
+  text-align:left; max-height:180px; overflow-y:auto; margin:15px 0; border:1px solid #e2e8f0;
+}
 
 /* ROADMAP */
 .roadmap-step{background:white; border-left:5px solid var(--brand-yellow); padding:15px; border-radius:8px; margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.04);}
-.roadmap-step h4{color:var(--brand-green); margin-bottom:4px; font-size:16px;}
+.roadmap-step h4{color:var(--brand-green); margin-bottom:4px; font-size:15px;}
 .roadmap-step p{font-size:13px; color:#475569;}
 
 /* STORIES */
@@ -92,7 +101,6 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
   header{padding:10px 4%;}
   .brand{font-size:16px;}
   nav a:not(.yt-btn){display:none;}
-  .section-title h2{font-size:20px;}
   .translator-section{padding:20px 3%;}
 }
 </style>
@@ -102,21 +110,22 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
 <header>
   <div class="brand">Agrajay Agam <span>Classes</span><small>Speak English with Confidence</small></div>
   <nav>
+    <a href="#translator">Translator</a>
+    <a href="#ai-partner">AI Partner</a>
     <a href="#stories">Stories</a>
-    <a href="#roadmap">Roadmap</a>
     <a href="https://youtube.com/@agrajayagamclasses" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
   </nav>
 </header>
 
-<!-- AUTO TRANSLATION SECTION (GREEN & YELLOW THEME) -->
-<section class="translator-section">
+<!-- 1. LIVE AUTO TRANSLATOR -->
+<section class="translator-section" id="translator">
   <div class="section-title" style="margin-bottom:10px;">
     <h2 style="color:var(--brand-yellow);">🤖 Live Hindi to English Auto-Translator</h2>
     <p style="color:#f0fdf4;">कुछ भी हिंदी में लिखें या बोलें, तुरंत सटीक अंग्रेजी पाएं</p>
   </div>
   
   <div class="translator-box">
-    <label><i class="fa-solid fa-keyboard"></i> हिंदी वाक्य लिखें या बोलें:</label>
+    <label><i class="fa-solid fa-keyboard"></i> हिंदी वाक्य दर्ज करें:</label>
     <textarea id="hindiInput" placeholder="उदा: मैं रोज अंग्रेजी बोलने का अभ्यास करना चाहता हूँ..."></textarea>
     
     <div class="btn-group">
@@ -133,7 +142,29 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
   </div>
 </section>
 
-<!-- ROADMAP SECTION -->
+<!-- 2. AI SPEAKING PARTNER (SARAH) -->
+<section id="ai-partner" style="background:var(--bg-yellow); border-bottom:3px solid var(--brand-yellow);">
+  <div class="section-title">
+    <h2>🗣️ Talk to Your AI English Partner (Sarah)</h2>
+    <p>अकेले अभ्यास करें! AI ट्यूटर 'Sarah' से इंग्लिश में सवाल-जवाब करें</p>
+  </div>
+
+  <div class="ai-partner-card">
+    <div style="font-size:45px;">👩‍🏫</div>
+    <h3 style="color:var(--brand-green);">Sarah (AI English Tutor)</h3>
+    <p id="aiStatus" style="font-size:13px; color:#64748b; margin-top:4px;">"Click the button to start conversation!"</p>
+    
+    <div class="chat-log" id="chatLog">
+      <b>Sarah:</b> Hello! How are you doing today? Ready to practice speaking English?
+    </div>
+
+    <button id="startTalkBtn" class="btn btn-yellow" style="width:100%; font-size:15px;" onclick="startAITalk()">
+      🎙️ Tap to Speak (बोलना शुरू करें)
+    </button>
+  </div>
+</section>
+
+<!-- 3. ROADMAP SECTION -->
 <section id="roadmap">
   <div class="section-title">
     <h2>🗺️ Complete English Learning Roadmap</h2>
@@ -148,12 +179,12 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
     <p>ऊपर दिए गए ट्रांसलेटर टूल की मदद से रोज़ाना अपने वाक्यों का अभ्यास करें।</p>
   </div>
   <div class="roadmap-step">
-    <h4>Step 3: Story Reading & Listening</h4>
-    <p>नीचे दी गई कहानियों को पढ़ें और ऑडियो बटन दबाकर सही उच्चारण सुनें।</p>
+    <h4>Step 3: Talk to AI Partner & Read Stories</h4>
+    <p>Sarah से रोज़ 10 मिनट बात करें और नीचे दी गई कहानियों का उच्चारण सुनें।</p>
   </div>
 </section>
 
-<!-- 1000-WORD STORIES SECTION -->
+<!-- 4. 1000-WORD STORIES SECTION -->
 <section id="stories">
   <div class="section-title">
     <h2>📖 Detailed Realistic Stories (~1000 Words Each)</h2>
@@ -168,7 +199,7 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
 </footer>
 
 <script>
-// LIVE WORKING TRANSLATION API FUNCTION
+// AUTO TRANSLATOR FUNCTION
 async function translateText() {
   let input = document.getElementById('hindiInput').value.trim();
   let output = document.getElementById('translationOutput');
@@ -200,7 +231,7 @@ async function translateText() {
   }
 }
 
-// VOICE INPUT (SPEECH TO TEXT FOR MOBILE)
+// VOICE INPUT FOR TRANSLATOR
 function startVoice() {
   if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
     alert("आपके मोबाइल/ब्राउज़र में माइक सपोर्ट उपलब्ध नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
@@ -220,13 +251,59 @@ function startVoice() {
     document.getElementById('hindiInput').value = transcript;
     translateText();
   };
+}
+
+// AI SPEAKING PARTNER (SARAH) LOGIC
+function startAITalk() {
+  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    alert("आपके मोबाइल/ब्राउज़र में माइक सपोर्ट उपलब्ध नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
+    return;
+  }
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const recognition = new SpeechRecognition();
+  recognition.lang = 'en-US'; // User speaks in English
   
+  let status = document.getElementById('aiStatus');
+  let chatLog = document.getElementById('chatLog');
+
+  status.innerText = "🎧 Listening... Speak in English now!";
+  recognition.start();
+
+  recognition.onresult = function(event) {
+    let userSpeech = event.results[0][0].transcript;
+    chatLog.innerHTML += `<br><b>You:</b> ${userSpeech}`;
+    status.innerText = "🤔 Sarah is thinking...";
+    
+    setTimeout(() => {
+      let aiReply = getAIReply(userSpeech);
+      chatLog.innerHTML += `<br><b>Sarah:</b> ${aiReply}`;
+      chatLog.scrollTop = chatLog.scrollHeight;
+      
+      let speech = new SpeechSynthesisUtterance(aiReply);
+      speech.lang = 'en-US';
+      speech.rate = 0.85;
+      window.speechSynthesis.speak(speech);
+      
+      status.innerText = "Tap button again to continue speaking!";
+    }, 800);
+  };
+
   recognition.onerror = function() {
-    output.innerText = "आवाज पहचानने में दिक्कत हुई, कृपया दोबारा बोलें।";
+    status.innerText = "Couldn't hear clearly. Please tap and speak again!";
   };
 }
 
-// TEXT TO SPEECH
+function getAIReply(input) {
+  let text = input.toLowerCase();
+  if(text.includes("hello") || text.includes("hi")) return "Hello! How was your day today?";
+  if(text.includes("fine") || text.includes("good")) return "Glad to hear that! What are your plans for tomorrow?";
+  if(text.includes("name")) return "My name is Sarah! I am your AI English practice partner.";
+  if(text.includes("learn") || text.includes("english")) return "You are doing great! Daily speaking practice is the key to fluency.";
+  return "That's interesting! Tell me more about it in English.";
+}
+
+// SPEECH AUDIO ENGINE
 let synth = window.speechSynthesis;
 function speakTranslatedText() {
   let text = document.getElementById('translationOutput').innerText;
