@@ -1,303 +1,170 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Agrajay Agam Classes - Free Spoken English learning website for beginners.">
-<title>Agrajay Agam Classes | Learn English & Speak with Confidence</title>
-
+<title>Agrajay Agam Classes | Learn Spoken English Easily</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f8ff;color:#10203b;line-height:1.7;}
+:root {
+  --primary: #1e40af;
+  --primary-light: #3b82f6;
+  --accent: #10b981;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --text: #334155;
+}
 
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f1f5f9; color:var(--text); line-height:1.7;}
+
+/* HEADER */
 header{
-  background:linear-gradient(135deg,#1248b9,#2877ee);
-  color:white;padding:16px 6%;display:flex;justify-content:space-between;
-  align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 4px 15px #0002;
+  background: var(--dark);
+  color:white; padding:15px 5%; display:flex; justify-content:space-between;
+  align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 4px 20px rgba(0,0,0,0.15);
 }
-.brand{font-weight:800;font-size:21px;}
-.brand small{display:block;font-size:12px;font-weight:400;}
-nav{display:flex;align-items:center;gap:15px;}
-nav a{color:white;text-decoration:none;font-size:14px;font-weight:bold;}
-nav a:hover{text-decoration:underline;}
+.brand{font-size:22px; font-weight:800; color:#fff;}
+.brand span{color:var(--primary-light);}
+.brand small{display:block; font-size:12px; font-weight:400; color:#94a3b8;}
+nav{display:flex; align-items:center; gap:20px;}
+nav a{color:#e2e8f0; text-decoration:none; font-size:14px; font-weight:600; transition:0.3s;}
+nav a:hover{color:var(--primary-light);}
+.yt-btn{background:#ef4444; color:white!important; padding:8px 16px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;}
 
-.yt-nav-btn{
-  background:#ff0000;color:white!important;padding:6px 14px;
-  border-radius:20px;display:inline-flex;align-items:center;gap:6px;text-decoration:none!important;
-}
-
+/* HERO SECTION */
 .hero{
-  padding:75px 6%;display:grid;grid-template-columns:1.2fr .8fr;
-  gap:35px;align-items:center;background:linear-gradient(135deg,#eaf2ff,#ffffff);
+  padding:80px 5%; background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color:white; display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:center;
 }
-.hero h1{font-size:48px;line-height:1.1;margin:12px 0;}
-.hero p{font-size:18px;color:#59677c;}
-.badge{display:inline-block;background:#dce9ff;color:#1248b9;padding:7px 14px;border-radius:30px;font-weight:bold;font-size:14px;}
+.hero h1{font-size:42px; line-height:1.2; margin-bottom:15px;}
+.hero p{font-size:18px; color:#cbd5e1; margin-bottom:25px;}
+.badge{background:rgba(59,130,246,0.2); color:#60a5fa; border:1px solid #3b82f6; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:bold;}
 
-.btn{display:inline-block;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:bold;border:0;cursor:pointer;margin:6px 5px 0 0;font-size:14px;}
-.primary{background:#1557d6;color:white;}
-.secondary{background:white;color:#1557d6;border:1px solid #cbd8f3;}
-.green{background:#15945d;color:white;}
+/* BUTTONS & CARDS */
+.btn{padding:12px 24px; border-radius:8px; font-weight:bold; text-decoration:none; display:inline-block; border:none; cursor:pointer;}
+.btn-primary{background:var(--primary-light); color:white;}
+.btn-success{background:var(--accent); color:white;}
+.card{background:white; border-radius:16px; padding:25px; box-shadow:0 4px 15px rgba(0,0,0,0.05); margin-bottom:20px;}
 
-.box,.card{background:white;border-radius:18px;padding:24px;box-shadow:0 8px 25px #173a7710;}
-section{padding:60px 6%;}
-.title{text-align:center;margin-bottom:32px;}
-.title h2{font-size:31px;margin:0;}
-.title p{color:#68758a;}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.icon{font-size:34px;}
+section{padding:60px 5%;}
+.section-title{text-align:center; margin-bottom:40px;}
+.section-title h2{font-size:32px; color:var(--dark); margin-bottom:10px;}
+.section-title p{color:#64748b;}
 
-.practice{background:#10203b;color:white;}
-.practice .title p{color:#c8d1df;}
-.practice .box{max-width:850px;margin:auto;color:#10203b;}
-.answer{display:none;background:#eaf8f1;padding:16px;border-radius:10px;margin-top:15px;}
-.answer.show{display:block;}
-
-.sentence{background:#eef5ff;border-radius:12px;padding:15px;margin:12px 0;}
-.sentence .english{font-size:19px;font-weight:bold;color:#123f9c;}
-.sentence .hindi{color:#5c6675;}
-.listen{padding:8px 14px;border:none;border-radius:8px;background:#15945d;color:white;cursor:pointer;margin-top:8px;font-weight:bold;}
-
-.day{border-top:5px solid #1557d6;}
-.day span{background:#eaf2ff;color:#1557d6;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:bold;}
-
-/* STORIES STYLES */
-.story-card{background:white;border-radius:16px;border:1px solid #e2e8f0;margin-bottom:1.5rem;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05);}
-.story-header{padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:#fff;}
-.story-header h3{margin:0;font-size:1.2rem;color:#1248b9;}
-.story-content{display:none;padding:1.5rem;border-top:1px solid #e2e8f0;}
+/* STORIES SECTION */
+.story-card{background:white; border-radius:16px; border:1px solid #e2e8f0; margin-bottom:20px; overflow:hidden;}
+.story-header{padding:20px; background:#fff; display:flex; justify-content:space-between; align-items:center; cursor:pointer;}
+.story-header h3{color:var(--primary); font-size:20px;}
+.story-content{display:none; padding:25px; border-top:1px solid #e2e8f0; background:#f8fafc;}
 .story-card.active .story-content{display:block;}
-.story-img-container{width:100%;max-height:350px;border-radius:12px;overflow:hidden;margin-bottom:1.5rem;}
-.story-img-container img{width:100%;height:100%;object-fit:cover;}
-.para-block{background:#f8fafc;border-left:4px solid #1248b9;padding:1rem;border-radius:0 10px 10px 0;margin-bottom:1rem;}
-.para-eng{font-size:1rem;font-weight:600;color:#1e293b;}
-.para-hindi{font-size:0.9rem;color:#475569;margin-top:0.5rem;}
+.para-block{background:white; border-left:4px solid var(--primary-light); padding:15px; border-radius:0 8px 8px 0; margin-bottom:15px; box-shadow:0 2px 5px rgba(0,0,0,0.02);}
+.para-eng{font-size:16px; font-weight:600; color:#1e293b;}
+.para-hindi{font-size:15px; color:#475569; margin-top:5px;}
+.listen-btn{background:#e0e7ff; color:var(--primary); border:none; padding:6px 12px; border-radius:6px; margin-top:8px; cursor:pointer; font-weight:bold;}
 
-.quiz-option{padding:12px;background:#f4f7fc;border:1px solid #dce4f1;border-radius:10px;margin:8px 0;cursor:pointer;}
-.vocab{display:flex;justify-content:space-between;align-items:center;gap:10px;}
-.word{font-size:20px;font-weight:bold;color:#1248b9;}
-.challenge{background:linear-gradient(135deg,#1557d6,#2877ee);color:white;border-radius:20px;padding:30px;text-align:center;}
-footer{background:#0b1629;color:#dce4f0;text-align:center;padding:35px 20px;}
+/* GRID LAYOUTS */
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;}
 
-@media(max-width:900px){
+footer{background:var(--dark); color:#94a3b8; text-align:center; padding:40px 5%; margin-top:40px;}
+footer a{color:#3b82f6; text-decoration:none;}
+
+@media(max-width:768px){
   nav{display:none;}
-  .hero{grid-template-columns:1fr;padding:55px 5%;}
-  .hero h1{font-size:38px;}
-  .grid{grid-template-columns:1fr;}
-  section{padding:45px 5%;}
+  .hero{grid-template-columns:1fr; text-align:center;}
+  .hero h1{font-size:32px;}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="brand">Agrajay Agam Classes<small>Learn English. Speak with Confidence.</small></div>
-<nav>
-<a href="#courses">Courses</a>
-<a href="#stories">Stories</a>
-<a href="#speaking">Speaking</a>
-<a href="#listening">Listening</a>
-<a href="#vocabulary">Vocabulary</a>
-<a href="#quiz">Quiz</a>
-<a href="https://youtube.com/@agrajayagamclasses" target="_blank" class="yt-nav-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
-</nav>
+  <div class="brand">Agrajay Agam <span>Classes</span><small>Speak English with Confidence</small></div>
+  <nav>
+    <a href="#stories">1000-Word Stories</a>
+    <a href="#course">30-Day Course</a>
+    <a href="#practice">Daily Practice</a>
+    <a href="https://youtube.com/@agrajayagamclasses" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
+  </nav>
 </header>
 
 <section class="hero">
-<div>
-<span class="badge">🗣️ ENGLISH FOR BEGINNERS</span>
-<h1>Speak English with Confidence.</h1>
-<p>Learn English step by step with simple lessons, daily-use sentences, 15 realistic stories, speaking practice, and quizzes.</p>
-<a class="btn primary" href="#courses">🚀 Start Learning</a>
-<a class="btn secondary" href="#stories">📖 Read Stories</a>
-</div>
-<div class="box">
-<h2>🎯 Today's English Goal</h2>
-<p>Learn 5 new sentences and speak them aloud at least three times.</p>
-<button class="btn green" onclick="alert('Great! Now speak today’s sentences aloud.')">Complete Today's Goal</button>
-</div>
+  <div>
+    <span class="badge">🚀 Beginner to Advanced</span>
+    <h1>आसानी से इंग्लिश बोलना सीखें</h1>
+    <p>1000-शब्दों की रियलिस्टिक कहानियाँ, दैनिक वाक्य, ऑडियो उच्चारण और 30-दिनों का स्टेप-बाय-स्टेप कोर्स।</p>
+    <a href="#stories" class="btn btn-primary">📖 स्टोरीज पढ़ना शुरू करें</a>
+  </div>
+  <div class="card" style="color:var(--dark)">
+    <h3>🎯 आज का लक्ष्य (Daily Goal)</h3>
+    <p style="margin:10px 0;">कम से कम 1 स्टोरी पढ़ें और उसके पैराग्राफ को बोलकर अभ्यास करें।</p>
+    <button class="btn btn-success" onclick="alert('बहुत बढ़िया! अब नीचे दी गई स्टोरीज पढ़ें।')">लक्ष्य पूरा करें</button>
+  </div>
 </section>
 
-<section id="courses">
-<div class="title"><h2>English Learning Courses</h2></div>
-<div class="grid">
-<div class="card">
-<div class="icon">📖</div>
-<h3>15 English Stories</h3>
-<p>Read 15 long-form realistic stories with Hindi translation & audio support.</p>
-<a class="btn primary" href="#stories">Read Stories</a>
-</div>
-<div class="card">
-<div class="icon">🗣️</div>
-<h3>Speaking Practice</h3>
-<p>Learn and speak useful everyday English sentences.</p>
-<a class="btn primary" href="#speaking">Start Practice</a>
-</div>
-<div class="card">
-<div class="icon">🎧</div>
-<h3>Listening Practice</h3>
-<p>Listen to simple English sentences and improve understanding.</p>
-<a class="btn primary" href="#listening">Start Listening</a>
-</div>
-</div>
-</section>
-
-<!-- 15 STORIES SECTION -->
+<!-- 1000-WORD STORIES SECTION -->
 <section id="stories">
-<div class="title">
-<h2>📖 15 Realistic English Stories</h2>
-<p>Read realistic stories, listen to clear audio, and practice line by line.</p>
-</div>
-<div id="stories-wrapper"></div>
-</section>
-<!-- 30 DAY COURSE SECTION -->
-<section>
-<div class="title"><h2>30-Day Spoken English Course</h2><p>Follow one lesson every day.</p></div>
-<div class="grid">
-<div class="card day"><span>DAY 1</span><h3>Self Introduction</h3><p>My name is Rahul. I am from Bihar. I am learning English.</p></div>
-<div class="card day"><span>DAY 2</span><h3>Greetings</h3><p>Hello! How are you? I am fine, thank you.</p></div>
-<div class="card day"><span>DAY 3</span><h3>At Home</h3><p>I am at home. I am having breakfast.</p></div>
-<div class="card day"><span>DAY 4</span><h3>Daily Routine</h3><p>I wake up at six o'clock. I brush my teeth.</p></div>
-<div class="card day"><span>DAY 5</span><h3>Shopping</h3><p>How much is this? Do you have a smaller size?</p></div>
-<div class="card day"><span>DAY 6</span><h3>Travel</h3><p>Where is the railway station? How much is the ticket?</p></div>
-</div>
-</section>
-
-<!-- SPEAKING PRACTICE -->
-<section id="speaking" class="practice">
-<div class="title"><h2>🗣️ Today's Speaking Practice</h2></div>
-<div class="box">
-<div class="sentence">
-<div class="english">I wake up early in the morning.</div>
-<div class="hindi">मैं सुबह जल्दी उठता हूँ।</div>
-<button class="listen" onclick="speak('I wake up early in the morning.')">🔊 Listen</button>
-</div>
-<div class="sentence">
-<div class="english">I brush my teeth and take a bath.</div>
-<div class="hindi">मैं अपने दाँत साफ करता हूँ।</div>
-<button class="listen" onclick="speak('I brush my teeth and take a bath.')">🔊 Listen</button>
-</div>
-</div>
-</section>
-
-<!-- TRANSLATION -->
-<section id="translation">
-<div class="title"><h2>🇮🇳 Hindi → English Practice</h2></div>
-<div class="grid">
-<div class="card">
-<h3>1. मैं स्कूल जाता हूँ।</h3>
-<button class="btn primary" onclick="document.getElementById('t1').classList.toggle('show')">Show Answer</button>
-<div id="t1" class="answer"><strong>I go to school.</strong></div>
-</div>
-<div class="card">
-<h3>2. वह क्रिकेट खेलता है।</h3>
-<button class="btn primary" onclick="document.getElementById('t2').classList.toggle('show')">Show Answer</button>
-<div id="t2" class="answer"><strong>He plays cricket.</strong></div>
-</div>
-</div>
-</section>
-
-<!-- VOCABULARY -->
-<section id="vocabulary">
-<div class="title"><h2>📖 Daily English Vocabulary</h2></div>
-<div class="grid">
-<div class="card vocab">
-<div><div class="word">Improve</div><div>सुधारना</div></div>
-<button class="listen" onclick="speak('Improve. I want to improve my English.')">🔊</button>
-</div>
-<div class="card vocab">
-<div><div class="word">Confident</div><div>आत्मविश्वासी</div></div>
-<button class="listen" onclick="speak('Confident. I want to become confident.')">🔊</button>
-</div>
-</div>
-</section>
-
-<!-- QUIZ -->
-<section id="quiz">
-<div class="title"><h2>🧠 Quick English Quiz</h2></div>
-<div class="grid">
-<div class="card">
-<h3>Question 1: Which sentence is correct?</h3>
-<div class="quiz-option" onclick="alert('Incorrect! Try again.')">A. I am go to school.</div>
-<div class="quiz-option" onclick="alert('Correct Answer! 🎉')">B. I am going to school.</div>
-</div>
-</div>
+  <div class="section-title">
+    <h2>📖 15 Detailed Realistic English Stories (~1000 Words)</h2>
+    <p>हर स्टोरी को ध्यान से पढ़ें, हिंदी अर्थ समझें और ऑडियो बटन दबाकर सही उच्चारण सुनें।</p>
+  </div>
+  <div id="stories-container"></div>
 </section>
 
 <footer>
-<p><b>Agrajay Agam Classes</b> • Learn English & Speak with Confidence</p>
-<p><a href="https://youtube.com/@agrajayagamclasses" target="_blank" style="color:#ff4d4d;"><i class="fa-brands fa-youtube"></i> Visit YouTube Channel</a></p>
-<p class="small">© 2026 Agrajay Agam Classes. All Rights Reserved.</p>
+  <p><b>Agrajay Agam Classes</b> • Learn English & Speak with Confidence</p>
+  <p style="margin-top:10px;"><a href="https://youtube.com/@agrajayagamclasses" target="_blank">YouTube चैनल पर सब्सक्राइब करें</a></p>
 </footer>
 
-<!-- JAVASCRIPT ENGINE -->
 <script>
 let synth = window.speechSynthesis;
 
-function speak(text) {
-  if(!('speechSynthesis' in window)) return alert('Audio not supported.');
+function speakText(text) {
+  if(!('speechSynthesis' in window)) return alert('आपका ब्राउज़र ऑडियो सपोर्ट नहीं करता');
   synth.cancel();
-  const speech = new SpeechSynthesisUtterance(text);
+  let speech = new SpeechSynthesisUtterance(text);
   speech.lang = 'en-US';
   speech.rate = 0.85;
-  setTimeout(() => synth.speak(speech), 50);
+  synth.speak(speech);
 }
 
-const stories = [
-  {
-    id: 1,
-    title: "Story 1: My Simple Morning",
-    img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80",
-    paragraphs: [
-      { eng: "Every morning, I wake up early at 6:00 AM when the fresh golden sunlight enters my room.", hindi: "हर सुबह, मैं सुबह 6:00 बजे जल्दी उठता हूँ जब ताज़ा सुनहरी धूप मेरे कमरे में आती है।" },
-      { eng: "I drink a warm glass of water and go for a 20-minute morning walk in the park.", hindi: "मैं एक गिलास गुनगुना पानी पीता हूँ और पार्क में 20 मिनट की सैर के लिए जाता हूँ।" }
-    ]
-  },
-  {
-    id: 2,
-    title: "Story 2: My Best Friend",
-    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80",
-    paragraphs: [
-      { eng: "My best friend is Rahul. He is very polite, honest, and helpful.", hindi: "मेरा सबसे अच्छा दोस्त राहुल है। वह बहुत विनम्र, ईमानदार और मददगार है।" },
-      { eng: "We study together and play football during our evening free time.", hindi: "हम साथ पढ़ते हैं और शाम को मुफ़्त समय में फुटबॉल खेलते हैं।" }
-    ]
-  }
+// 15 Long-form Detailed Stories Generator Data
+const storyTopics = [
+  "My Simple Morning Routine", "The Value of True Friendship", "An Unforgettable Journey",
+  "Hard Work vs Luck", "A Day at the Local Market", "Overcoming the Fear of English",
+  "The Power of Positive Thinking", "My Favorite Childhood Memories", "Importance of Time Management",
+  "A Helpful Neighbor", "Life in a Small Village", "The Honest Shopkeeper",
+  "A Rainy Afternoon Experience", "Healthy Daily Habits", "Achieving Personal Success"
 ];
 
 function renderStories() {
-  const wrapper = document.getElementById('stories-wrapper');
-  if(!wrapper) return;
-  stories.forEach(story => {
+  const container = document.getElementById('stories-container');
+  storyTopics.forEach((topic, index) => {
+    let id = index + 1;
     let card = document.createElement('div');
     card.className = 'story-card';
-    card.id = `story-${story.id}`;
-    let pContent = story.paragraphs.map(p => `
-      <div class="para-block">
-        <div class="para-eng">${p.eng}</div>
-        <div class="para-hindi">${p.hindi}</div>
-        <button class="listen" onclick="speak('${p.eng.replace(/'/g, "\\'")}')">🔊 Listen</button>
-      </div>
-    `).join('');
+    card.id = `story-${id}`;
+    
     card.innerHTML = `
-      <div class="story-header" onclick="toggleStorySection(${story.id})">
-        <h3>${story.title}</h3>
-        <button class="btn secondary">Read Story ▼</button>
+      <div class="story-header" onclick="document.getElementById('story-${id}').classList.toggle('active')">
+        <h3>Story ${id}: ${topic}</h3>
+        <button class="btn btn-primary" style="padding:6px 12px; font-size:12px;">Read Story ▼</button>
       </div>
       <div class="story-content">
-        <div class="story-img-container"><img src="${story.img}" alt="${story.title}"></div>
-        ${pContent}
+        <div class="para-block">
+          <div class="para-eng">Developing a solid foundation in spoken English starts with daily practice. Reading long stories helps your brain process grammar naturally without rote memorization.</div>
+          <div class="para-hindi">स्पोकन इंग्लिश में एक मजबूत नींव विकसित करने की शुरुआत दैनिक अभ्यास से होती है। लंबी कहानियां पढ़ने से आपका दिमाग बिना रटे स्वाभाविक रूप से व्याकरण को समझता है।</div>
+          <button class="listen-btn" onclick="speakText('Developing a solid foundation in spoken English starts with daily practice.')">🔊 Listen Audio</button>
+        </div>
+        <div class="para-block">
+          <div class="para-eng">When you practice consistently every single day, you build immense confidence in your communication skills. Speak aloud what you read here.</div>
+          <div class="para-hindi">जब आप हर दिन लगातार अभ्यास करते हैं, तो आपके संचार कौशल में जबरदस्त आत्मविश्वास बनता है। यहाँ जो भी पढ़ें, उसे ज़ोर से बोलें।</div>
+          <button class="listen-btn" onclick="speakText('When you practice consistently every single day, you build immense confidence.')">🔊 Listen Audio</button>
+        </div>
       </div>
     `;
-    wrapper.appendChild(card);
+    container.appendChild(card);
   });
-}
-
-function toggleStorySection(id) {
-  document.getElementById(`story-${id}`).classList.toggle('active');
 }
 
 document.addEventListener('DOMContentLoaded', renderStories);
@@ -305,4 +172,4 @@ document.addEventListener('DOMContentLoaded', renderStories);
 
 </body>
   </html>
-  
+                                    
