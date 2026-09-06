@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Agrajay Agam Classes | Master Spoken English</title>
-  <meta name="google-site-verification" content="zZyRRylPLu_fXIkk_ljZdHJ3jmLL9KL8zZcXPEFz530" />
+<!-- Google Search Console Verification Meta Tag preserved -->
+<meta name="google-site-verification" content="zZyRRylPLu_fXIkk_ljZdHJ3jmLL9KL8zZcXPEFz530" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root {
@@ -23,94 +24,79 @@ body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helveti
 /* NAVIGATION */
 header{
   background: var(--brand-green);
-  color:white; padding:12px 4%; display:flex; justify-content:space-between;
+  color:white; padding:15px 4%; display:flex; justify-content:space-between;
   align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 4px 15px rgba(0,0,0,0.15);
 }
 .brand{font-size:18px; font-weight:800; color:#fff;}
 .brand span{color:var(--brand-yellow);}
 .brand small{display:block; font-size:10px; font-weight:400; color:#dcfce7;}
 nav{display:flex; align-items:center; gap:12px;}
-nav a{color:#f0fdf4; text-decoration:none; font-size:13px; font-weight:600;}
-.yt-btn{background:#ef4444; color:white!important; padding:6px 12px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:bold;}
+.yt-btn{background:#ef4444; color:white!important; padding:8px 16px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:bold;}
 
-/* TRANSLATOR SECTION */
-.translator-section{
-  background: linear-gradient(135deg, #166534 0%, #15803d 100%);
-  padding:25px 4%; color:white; border-bottom: 5px solid var(--brand-yellow);
-}
-.translator-box{
-  background:white; border-radius:16px; padding:20px; color:var(--text);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2); max-width:800px; margin:15px auto 0 auto;
-}
-.translator-box label{font-weight:bold; font-size:14px; color:var(--brand-green); display:block; margin-bottom:8px;}
-.translator-box textarea{
-  width:100%; height:85px; padding:12px; border:2px solid #cbd5e1; border-radius:10px;
-  font-size:15px; outline:none; resize:none; font-family:inherit;
-}
-.translator-box textarea:focus{border-color:var(--light-green);}
+section{padding:35px 4%; max-width:900px; margin:0 auto;}
+.section-title{text-align:center; margin-bottom:25px;}
+.section-title h1{font-size:24px; color:var(--brand-green); margin-bottom:5px;}
+.section-title p{color:#64748b; font-size:14px;}
 
-.btn-group{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;}
+/* ARTICLES / BLOG SECTION */
+.category-filter{
+  display:flex; gap:8px; overflow-x:auto; padding-bottom:12px; margin-bottom:25px;
+}
+.cat-badge{
+  background:white; border:1px solid var(--brand-green); color:var(--brand-green);
+  padding:8px 16px; border-radius:20px; font-size:12px; font-weight:bold; cursor:pointer; white-space:nowrap;
+  transition: all 0.2s ease;
+}
+.cat-badge.active, .cat-badge:hover{
+  background:var(--brand-green); color:white;
+}
+
+.admin-panel{
+  background:white; border:2px dashed var(--brand-green); border-radius:12px; padding:20px; margin-bottom:30px; box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+.admin-panel h4{color:var(--brand-green); margin-bottom:12px; font-size:16px;}
+.admin-panel input, .admin-panel select, .admin-panel textarea{
+  width:100%; margin-bottom:12px; padding:10px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; font-family:inherit;
+}
+
 .btn{
-  flex:1; min-width:130px; padding:12px 15px; border-radius:8px; font-weight:bold;
+  width:100%; padding:12px; border-radius:8px; font-weight:bold;
   text-decoration:none; border:none; cursor:pointer; display:inline-flex;
   align-items:center; justify-content:center; gap:8px; font-size:14px; text-align:center;
 }
-.btn-yellow{background:var(--brand-yellow); color:#713f12;}
-.btn-green{background:var(--light-green); color:white;}
-.btn-danger{background:#ef4444; color:white;}
-.btn-speaker{background:var(--bg-yellow); color:var(--dark-yellow); border:1px solid var(--brand-yellow); width:100%; margin-top:10px;}
+.btn-green{background:var(--brand-green); color:white;}
 
-.trans-result{
-  background:var(--bg-yellow); border:2px dashed var(--brand-yellow); padding:15px; border-radius:10px;
-  margin-top:15px; min-height:60px; font-weight:600; color:var(--brand-green); font-size:16px; word-break:break-word;
+.article-card{
+  background:white; border-radius:14px; border:1px solid #e2e8f0; margin-bottom:20px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.03);
+}
+.article-tag{
+  display:inline-block; background:var(--bg-yellow); color:var(--dark-yellow); font-size:11px; font-weight:bold; padding:4px 10px; border-radius:6px; margin-bottom:10px; border:1px solid var(--brand-yellow);
+}
+.article-card h3{color:var(--brand-green); font-size:20px; margin-bottom:10px;}
+.article-body{font-size:15px; color:#334155; line-height:1.7; margin-bottom:15px; white-space:pre-line;}
+
+.article-actions{
+  display:flex; gap:12px; align-items:center; border-top:1px solid #f1f5f9; padding-top:12px; margin-top:10px; flex-wrap:wrap;
+}
+.like-btn{
+  background:none; border:none; color:#ef4444; font-size:14px; cursor:pointer; font-weight:bold; display:flex; align-items:center; gap:6px;
+}
+.admin-btn{
+  background:none; border:none; color:#64748b; font-size:12px; cursor:pointer; margin-left:auto; text-decoration:underline;
 }
 
-section{padding:35px 4%;}
-.section-title{text-align:center; margin-bottom:20px;}
-.section-title h2{font-size:22px; color:var(--brand-green); margin-bottom:5px;}
-.section-title p{color:#64748b; font-size:13px;}
-
-/* AI SPEAKING PARTNER BOX */
-.ai-partner-card{
-  max-width:700px; margin:0 auto; background:white; padding:20px; border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.06); border:2px solid var(--brand-yellow); text-align:center;
+.comment-box{
+  background:#f8fafc; border-radius:8px; padding:12px; margin-top:12px; font-size:13px; border:1px solid #e2e8f0;
 }
+.comment-input-group{display:flex; gap:8px; margin-top:10px;}
+.comment-input-group input{flex:1; padding:8px 12px; border:1px solid #cbd5e1; border-radius:6px; font-size:13px;}
 
-.avatar-container {
-  width: 100px; height: 100px; margin: 0 auto 10px auto; border-radius: 50%;
-  overflow: hidden; border: 4px solid var(--brand-green); box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-.avatar-container img { width: 100%; height: 100%; object-fit: cover; }
-
-.chat-log{
-  background:#f8fafc; padding:12px; border-radius:10px; font-size:14px;
-  text-align:left; max-height:220px; overflow-y:auto; margin:15px 0; border:1px solid #e2e8f0;
-}
-
-/* ROADMAP */
-.roadmap-step{background:white; border-left:5px solid var(--brand-yellow); padding:15px; border-radius:8px; margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.04);}
-.roadmap-step h4{color:var(--brand-green); margin-bottom:4px; font-size:15px;}
-.roadmap-step p{font-size:13px; color:#475569;}
-
-/* STORIES */
-.story-card{background:white; border-radius:14px; border:1px solid #e2e8f0; margin-bottom:15px; overflow:hidden;}
-.story-header{padding:15px; background:#fff; display:flex; justify-content:space-between; align-items:center; cursor:pointer; border-bottom:2px solid var(--bg-yellow);}
-.story-header h3{color:var(--brand-green); font-size:16px;}
-.story-content{display:none; padding:15px; background:var(--bg-yellow);}
-.story-card.active .story-content{display:block;}
-.para-block{background:white; border-left:4px solid var(--light-green); padding:12px; border-radius:0 8px 8px 0; margin-bottom:12px;}
-.para-eng{font-size:15px; font-weight:600; color:#1e293b;}
-.para-hindi{font-size:13px; color:#475569; margin-top:4px;}
-.listen-btn{background:var(--brand-yellow); color:#713f12; border:none; padding:6px 10px; border-radius:6px; margin-top:8px; cursor:pointer; font-weight:bold; font-size:12px;}
-
-footer{background:var(--brand-green); color:#dcfce7; text-align:center; padding:30px 4%; font-size:13px;}
+footer{background:var(--brand-green); color:#dcfce7; text-align:center; padding:30px 4%; font-size:13px; margin-top:40px;}
 footer a{color:var(--brand-yellow); text-decoration:none;}
 
 @media(max-width:600px){
-  header{padding:10px 4%;}
+  header{padding:12px 4%;}
   .brand{font-size:16px;}
-  nav a:not(.yt-btn){display:none;}
-  .translator-section{padding:20px 3%;}
 }
 </style>
 </head>
@@ -119,94 +105,47 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
 <header>
   <div class="brand">Agrajay Agam <span>Classes</span><small>Speak English with Confidence</small></div>
   <nav>
-    <a href="#translator">Translator</a>
-    <a href="#ai-partner">AI Partner</a>
-    <a href="#stories">Stories</a>
     <a href="https://youtube.com/@agrajayagamclasses" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
   </nav>
 </header>
 
-<!-- 1. LIVE AUTO TRANSLATOR -->
-<section class="translator-section" id="translator">
-  <div class="section-title" style="margin-bottom:10px;">
-    <h2 style="color:var(--brand-yellow);">🤖 Live Hindi to English Auto-Translator</h2>
-    <p style="color:#f0fdf4;">कुछ भी हिंदी में लिखें या बोलें, तुरंत सटीक अंग्रेजी पाएं</p>
-  </div>
-  
-  <div class="translator-box">
-    <label><i class="fa-solid fa-keyboard"></i> हिंदी वाक्य दर्ज करें:</label>
-    <textarea id="hindiInput" placeholder="उदा: मैं रोज अंग्रेजी बोलने का अभ्यास करना चाहता हूँ..."></textarea>
-    
-    <div class="btn-group">
-      <button class="btn btn-yellow" onclick="translateText()"><i class="fa-solid fa-language"></i> Translate</button>
-      <button class="btn btn-green" onclick="startVoice()"><i class="fa-solid fa-microphone"></i> बोलकर टाइप करें</button>
-    </div>
-    
-    <div class="trans-result" id="translationOutput">
-      इंग्लिश अनुवाद यहाँ दिखाई देगा...
-    </div>
-    <button class="btn btn-speaker" id="speakTransBtn" style="display:none;" onclick="speakTranslatedText()">
-      🔊 उच्चारण सुनें (Listen Result)
-    </button>
-  </div>
-</section>
-
-<!-- 2. AI SPEAKING PARTNER (SARAH) - CONTINUOUS & GRAMMAR TEACHER -->
-<section id="ai-partner" style="background:var(--bg-yellow); border-bottom:3px solid var(--brand-yellow);">
+<section id="articles">
   <div class="section-title">
-    <h2>🗣️ Continuous Talk with AI Teacher (Sarah)</h2>
-    <p>एक बार बटन दबाएं, Sarah आपकी ग्रामर मिस्टेक्स को सुधारेगी और लगातार बात करेगी!</p>
+    <h1>📚 Spoken English Written Articles</h1>
+    <p>विषय चुनें और विस्तार से स्पोकन इंग्लिश के नियम व उदाहरण पढ़ें</p>
   </div>
 
-  <div class="ai-partner-card">
-    <div class="avatar-container">
-      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&auto=format&fit=crop&q=80" alt="Sarah English Teacher">
-    </div>
-    <h3 style="color:var(--brand-green);">Sarah (AI English Tutor)</h3>
-    <p id="aiStatus" style="font-size:13px; color:#64748b; margin-top:4px;">"Click 'Start Continuous Talk' to learn freely!"</p>
-    
-    <div class="chat-log" id="chatLog">
-      <b>Sarah:</b> Hello! I am your English teacher. Speak freely, and I will guide you with correct grammar!
-    </div>
+  <!-- Category Filter Badges -->
+  <div class="category-filter" id="categoryFilter">
+    <button class="cat-badge active" onclick="filterArticles('All')">All Topics</button>
+    <button class="cat-badge" onclick="filterArticles('English Speaking Script')">English Speaking Script</button>
+    <button class="cat-badge" onclick="filterArticles('Motivation')">Motivation</button>
+    <button class="cat-badge" onclick="filterArticles('Daily Use English Sentences')">Daily Use Sentences</button>
+    <button class="cat-badge" onclick="filterArticles('Spoken Friendly Vocabulary')">Vocabulary</button>
+    <button class="cat-badge" onclick="filterArticles('Conversation')">Conversation</button>
+    <button class="cat-badge" onclick="filterArticles('Spoken English Tips For Beginners')">Beginner Tips</button>
+    <button class="cat-badge" onclick="filterArticles('Translation Structures With Examples')">Translation Structures</button>
+  </div>
 
-    <div class="btn-group">
-      <button id="startTalkBtn" class="btn btn-yellow" style="font-size:15px;" onclick="toggleContinuousTalk()">
-        🎙️ Start Continuous Talk
-      </button>
-      <button id="stopTalkBtn" class="btn btn-danger" style="font-size:15px; display:none;" onclick="stopContinuousTalk()">
-        🛑 Stop Conversation
-      </button>
-    </div>
+  <!-- Admin Panel for Adding Articles (Protected with Admin PIN) -->
+  <div class="admin-panel">
+    <h4><i class="fa-solid fa-pen-to-square"></i> Admin Panel (Add New Article)</h4>
+    <select id="postCategory">
+      <option value="English Speaking Script">English Speaking Script</option>
+      <option value="Motivation">Motivation</option>
+      <option value="Daily Use English Sentences">Daily Use English Sentences</option>
+      <option value="Spoken Friendly Vocabulary">Spoken Friendly Vocabulary</option>
+      <option value="Conversation">Conversation</option>
+      <option value="Spoken English Tips For Beginners">Spoken English Tips For Beginners</option>
+      <option value="Translation Structures With Examples">Translation Structures With Examples</option>
+    </select>
+    <input type="text" id="postTitle" placeholder="Article Title (शीर्षक)">
+    <textarea id="postContent" style="height:120px;" placeholder="Write full article content here... (पूरा आर्टिकल लिखें)"></textarea>
+    <button class="btn btn-green" onclick="addNewArticle()"><i class="fa-solid fa-paper-plane"></i> Publish Article</button>
   </div>
-</section>
 
-<!-- 3. ROADMAP SECTION -->
-<section id="roadmap">
-  <div class="section-title">
-    <h2>🗺️ Complete English Learning Roadmap</h2>
-    <p>शुरुआत से फर्राटेदार इंग्लिश बोलने का आसान रास्ता</p>
-  </div>
-  <div class="roadmap-step">
-    <h4>Step 1: Daily Vocabulary Building</h4>
-    <p>रोजाना 5 नए अंग्रेजी शब्द और उनका सही उपयोग सीखें।</p>
-  </div>
-  <div class="roadmap-step">
-    <h4>Step 2: Sentence Structure & Translation</h4>
-    <p>ऊपर दिए गए ट्रांसलेटर टूल की मदद से रोज़ाना अपने वाक्यों का अभ्यास करें।</p>
-  </div>
-  <div class="roadmap-step">
-    <h4>Step 3: Talk to AI Partner & Read Stories</h4>
-    <p>Sarah से रोज़ 10 मिनट लगातार बात करें और कहानियों का उच्चारण सुनें।</p>
-  </div>
-</section>
-
-<!-- 4. STORIES SECTION -->
-<section id="stories">
-  <div class="section-title">
-    <h2>📖 Detailed Realistic Stories</h2>
-    <p>पैराग्राफ-दर-पैराग्राफ हिंदी अनुवाद और ऑडियो के साथ</p>
-  </div>
-  <div id="stories-container"></div>
+  <!-- Articles Container -->
+  <div id="articlesContainer"></div>
 </section>
 
 <footer>
@@ -215,242 +154,69 @@ footer a{color:var(--brand-yellow); text-decoration:none;}
 </footer>
 
 <script>
-// TRANSLATOR
-async function translateText() {
-  let input = document.getElementById('hindiInput').value.trim();
-  let output = document.getElementById('translationOutput');
-  let speakBtn = document.getElementById('speakTransBtn');
-  
-  if(!input) {
-    output.innerText = "कृपया ऊपर कोई हिंदी वाक्य दर्ज करें या बोलें।";
-    speakBtn.style.display = "none";
-    return;
+// ADMIN SECURITY PIN
+const ADMIN_PIN = "1234"; // केवल आपका सुरक्षा पिन
+
+// INITIAL DEMO ARTICLES DATA
+const defaultArticles = [
+  {
+    id: 1,
+    category: "Translation Structures With Examples",
+    title: "Structure: 'Subject + is/am/are + Used to + V1+ing'",
+    content: "इस स्ट्रक्चर का उपयोग किसी चीज़ की आदत होने (Habitual) को दर्शाने के लिए किया जाता है।\n\nExample 1: मुझे सुबह जल्दी उठने की आदत है।\n-> I am used to getting up early in the morning.\n\nExample 2: उसे अंग्रेजी में बोलने की आदत है।\n-> He is used to speaking in English.",
+    likes: 5,
+    comments: ["बहुत उपयोगी जानकारी सर!"]
   }
-  
-  output.innerText = "Translating... (अनुवाद हो रहा है...)";
-  
-  try {
-    let res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(input)}&langpair=hi|en`);
-    let data = await res.json();
-    
-    if(data && data.responseData && data.responseData.translatedText) {
-      let resultText = data.responseData.translatedText;
-      output.innerText = resultText;
-      speakBtn.style.display = "block";
-    } else {
-      output.innerText = "अनुवाद करने में समस्या आई, कृपया दोबारा प्रयास करें।";
-      speakBtn.style.display = "none";
-    }
-  } catch(error) {
-    output.innerText = "इंटरनेट कनेक्शन जांचें या पुनः प्रयास करें।";
-    speakBtn.style.display = "none";
-  }
-}
-
-function startVoice() {
-  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    alert("आपके ब्राउज़र में माइक सपोर्ट नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
-    return;
-  }
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognition = new SpeechRecognition();
-  recognition.lang = 'hi-IN';
-  
-  document.getElementById('translationOutput').innerText = "सुन रहा हूँ... बोलिए!";
-  recognition.start();
-  
-  recognition.onresult = function(event) {
-    let transcript = event.results[0][0].transcript;
-    document.getElementById('hindiInput').value = transcript;
-    translateText();
-  };
-}
-
-// SMART AI TEACHER ENGINE (GRAMMAR CORRECTION + DYNAMIC REPLIES)
-function getAIReply(input) {
-  let text = input.toLowerCase().trim();
-
-  // 1. GRAMMAR CORRECTIONS
-  if (text.includes("i is") || text.includes("i are")) {
-    return "Grammar Tip: With 'I', always use 'am'. Say 'I am' instead of 'I is'. Try saying it correctly!";
-  }
-  if (text.includes("he go") || text.includes("she go")) {
-    return "Quick Rule: For 'He' or 'She', use 'goes' in the present tense. Say 'He goes' or 'She goes'. Try again!";
-  }
-  if (text.includes("i am agree")) {
-    return "Correction: Instead of 'I am agree', simply say 'I agree'. Repeat after me: 'I agree'!";
-  }
-  if (text.includes("yesterday i go") || text.includes("yesterday i see")) {
-    return "Past Tense Check: For past events like yesterday, use past verbs like 'went' or 'saw'. Try saying that sentence in past tense!";
-  }
-  if (text.includes("me and my friend")) {
-    return "Grammar Note: It is polite to say 'My friend and I' instead of 'Me and my friend'. Try using that!";
-  }
-
-  // 2. CONVERSATIONAL REPLIES
-  if (text.includes("hello") || text.includes("hi") || text.includes("hey")) {
-    return "Hello there! How are you doing today? What would you like to practice?";
-  }
-  if (text.includes("fine") || text.includes("good") || text.includes("great")) {
-    return "That's fantastic! Tell me, what did you do today?";
-  }
-  if (text.includes("who are you") || text.includes("your name")) {
-    return "I am Sarah, your AI English teacher. I am here to help you speak fluent and correct English!";
-  }
-  if (text.includes("english") || text.includes("learn") || text.includes("practice")) {
-    return "Practicing daily is the secret to fluency! What is the most difficult topic for you in English?";
-  }
-  if (text.includes("food") || text.includes("eat") || text.includes("lunch") || text.includes("dinner")) {
-    return "Sounds delicious! What is your favorite meal to eat?";
-  }
-
-  // 3. DYNAMIC FALLBACKS
-  let fallbacks = [
-    "Your sentence structure looks good! What else would you like to share?",
-    "Great effort! Keep speaking to gain confidence. Tell me more about your day.",
-    "That makes sense! How do you usually practice English at home?",
-    "Nice sentence! Let's continue speaking. What are your plans for tomorrow?"
-  ];
-
-  return fallbacks[Math.floor(Math.random() * fallbacks.length)];
-}
-
-// CONTINUOUS VOICE SYSTEM
-let isTalkActive = false;
-let recognitionInstance = null;
-
-function toggleContinuousTalk() {
-  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    alert("आपके ब्राउज़र में माइक सपोर्ट नहीं है। कृपया गूगल क्रोम का उपयोग करें।");
-    return;
-  }
-
-  isTalkActive = true;
-  document.getElementById('startTalkBtn').style.display = "none";
-  document.getElementById('stopTalkBtn').style.display = "inline-flex";
-  
-  listenUser();
-}
-
-function stopContinuousTalk() {
-  isTalkActive = false;
-  if(recognitionInstance) {
-    recognitionInstance.stop();
-  }
-  window.speechSynthesis.cancel();
-  
-  document.getElementById('startTalkBtn').style.display = "inline-flex";
-  document.getElementById('stopTalkBtn').style.display = "none";
-  document.getElementById('aiStatus').innerText = "Conversation stopped. Click start to talk again!";
-}
-
-function listenUser() {
-  if (!isTalkActive) return;
-
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  recognitionInstance = new SpeechRecognition();
-  recognitionInstance.lang = 'en-US';
-  
-  let status = document.getElementById('aiStatus');
-  let chatLog = document.getElementById('chatLog');
-
-  status.innerText = "🎧 Listening... Speak now in English!";
-  
-  try {
-    recognitionInstance.start();
-  } catch(e) {}
-
-  recognitionInstance.onresult = function(event) {
-    let userSpeech = event.results[0][0].transcript;
-    chatLog.innerHTML += `<br><b>You:</b> ${userSpeech}`;
-    status.innerText = "🤔 Sarah is thinking...";
-    
-    let aiReply = getAIReply(userSpeech);
-    setTimeout(() => {
-      chatLog.innerHTML += `<br><b>Sarah:</b> ${aiReply}`;
-      chatLog.scrollTop = chatLog.scrollHeight;
-      
-      speakAIReply(aiReply);
-    }, 500);
-  };
-
-  recognitionInstance.onerror = function() {
-    if(isTalkActive) {
-      setTimeout(listenUser, 1000);
-    }
-  };
-}
-
-function speakAIReply(text) {
-  window.speechSynthesis.cancel();
-  let speech = new SpeechSynthesisUtterance(text);
-  speech.lang = 'en-US';
-  speech.rate = 0.88;
-  
-  document.getElementById('aiStatus').innerText = "🗣️ Sarah is speaking...";
-  
-  speech.onend = function() {
-    if (isTalkActive) {
-      setTimeout(listenUser, 500);
-    }
-  };
-  
-  window.speechSynthesis.speak(speech);
-}
-
-// AUDIO ENGINE FOR TRANSLATOR & STORIES
-let synth = window.speechSynthesis;
-function speakTranslatedText() {
-  let text = document.getElementById('translationOutput').innerText;
-  if(!text || text.includes("Translating")) return;
-  
-  synth.cancel();
-  let speech = new SpeechSynthesisUtterance(text);
-  speech.lang = 'en-US';
-  speech.rate = 0.85;
-  synth.speak(speech);
-}
-
-function speakText(text) {
-  synth.cancel();
-  let speech = new SpeechSynthesisUtterance(text);
-  speech.lang = 'en-US';
-  speech.rate = 0.85;
-  synth.speak(speech);
-}
-
-// STORIES RENDERER
-const storyTitles = [
-  "Story 1: The Power of Daily Consistency",
-  "Story 2: Overcoming the Fear of English",
-  "Story 3: A Journey Toward Success",
-  "Story 4: Understanding the Importance of Time",
-  "Story 5: Simple Habits for Big Results"
 ];
 
-function renderStories() {
-  const container = document.getElementById('stories-container');
-  storyTitles.forEach((title, index) => {
-    let id = index + 1;
+// LOAD ARTICLES FROM LOCALSTORAGE
+function getArticles() {
+  let stored = localStorage.getItem('aac_articles');
+  if(!stored) {
+    localStorage.setItem('aac_articles', JSON.stringify(defaultArticles));
+    return defaultArticles;
+  }
+  return JSON.parse(stored);
+}
+
+// RENDER ARTICLES
+function renderArticles(filter = 'All') {
+  const container = document.getElementById('articlesContainer');
+  const articles = getArticles();
+  container.innerHTML = "";
+
+  const filtered = (filter === 'All') ? articles : articles.filter(a => a.category === filter);
+
+  if(filtered.length === 0) {
+    container.innerHTML = "<p style='text-align:center; color:#64748b; padding:20px;'>इस श्रेणी में अभी कोई आर्टिकल पोस्ट नहीं हुआ है।</p>";
+    return;
+  }
+
+  filtered.forEach(article => {
     let card = document.createElement('div');
-    card.className = 'story-card';
-    card.id = `story-${id}`;
+    card.className = 'article-card';
     
+    let commentsHtml = article.comments.map(c => `<div style="margin-bottom:4px;">💬 ${c}</div>`).join('');
+
     card.innerHTML = `
-      <div class="story-header" onclick="document.getElementById('story-${id}').classList.toggle('active')">
-        <h3>${title}</h3>
-        <span style="font-size:12px; color:var(--brand-green); font-weight:bold;">Read Story ▼</span>
+      <span class="article-tag">${article.category}</span>
+      <h3>${article.title}</h3>
+      <div class="article-body">${article.content}</div>
+      
+      <div class="article-actions">
+        <button class="like-btn" onclick="likeArticle(${article.id})">
+          ❤️ <span>${article.likes}</span> Likes
+        </button>
+        <button class="admin-btn" onclick="editArticle(${article.id})">Edit</button>
+        <button class="admin-btn" style="color:#ef4444;" onclick="deleteArticle(${article.id})">Delete</button>
       </div>
-      <div class="story-content">
-        <div class="para-block">
-          <div class="para-eng">Learning English is a step-by-step journey that demands daily practice. Reading detailed realistic stories improves your grammar intuition without forcing you to memorize complex rules.</div>
-          <div class="para-hindi">अंग्रेजी सीखना एक चरण-दर-चरण यात्रा है जिसमें दैनिक अभ्यास की आवश्यकता होती है। विस्तृत यथार्थवादी कहानियों को पढ़ने से जटिल नियमों को रटे बिना आपके व्याकरण की समझ में सुधार होता है।</div>
-          <button class="listen-btn" onclick="speakText('Learning English is a step-by-step journey that demands daily practice.')">🔊 Listen Paragraph</button>
-        </div>
-        <div class="para-block">
-          <div class="para-eng">Make it a habit to speak out loud every single sentence you read here. Over time, your hesitation will disappear, and you will speak fluent English effortlessly.</div>
-          <div class="para-hindi">यहाँ पड़े गए हर वाक्य को ज़ोर से बोलने की आदत बनाएँ। समय के साथ आपकी झिझक दूर हो जाएगी और आप बिना किसी प्रयास के धाराप्रवाह अंग्रेजी बोलेंगे।</div>
-          <button class="listen-btn" onclick="speakText('Make it a habit to speak out loud every single sentence you read here.')">🔊 Listen Paragraph</button>
+
+      <div class="comment-box">
+        <b>Comments (${article.comments.length}):</b>
+        <div id="comments-${article.id}" style="margin-top:6px;">${commentsHtml || "<span style='color:#94a3b8;'>कोई कमेंट नहीं है। पहला कमेंट करें!</span>"}</div>
+        <div class="comment-input-group">
+          <input type="text" id="input-comment-${article.id}" placeholder="Write a comment...">
+          <button class="btn btn-green" style="padding:6px 12px; font-size:12px; width:auto;" onclick="addComment(${article.id})">Post</button>
         </div>
       </div>
     `;
@@ -458,9 +224,119 @@ function renderStories() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', renderStories);
+// FILTER ARTICLES BY CATEGORY
+function filterArticles(cat) {
+  document.querySelectorAll('.cat-badge').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderArticles(cat);
+}
+
+// ADD NEW ARTICLE (ADMIN ONLY)
+function addNewArticle() {
+  let pin = prompt("Enter Admin Security PIN to Publish:");
+  if(pin !== ADMIN_PIN) {
+    alert("Incorrect PIN! Only admin can add articles.");
+    return;
+  }
+
+  let cat = document.getElementById('postCategory').value;
+  let title = document.getElementById('postTitle').value.trim();
+  let content = document.getElementById('postContent').value.trim();
+
+  if(!title || !content) {
+    alert("Please fill both Title and Content.");
+    return;
+  }
+
+  let articles = getArticles();
+  let newArticle = {
+    id: Date.now(),
+    category: cat,
+    title: title,
+    content: content,
+    likes: 0,
+    comments: []
+  };
+
+  articles.unshift(newArticle);
+  localStorage.setItem('aac_articles', JSON.stringify(articles));
+  
+  document.getElementById('postTitle').value = "";
+  document.getElementById('postContent').value = "";
+  alert("Article Published Successfully!");
+  renderArticles();
+}
+
+// EDIT ARTICLE (ADMIN ONLY)
+function editArticle(id) {
+  let pin = prompt("Enter Admin Security PIN to Edit:");
+  if(pin !== ADMIN_PIN) {
+    alert("Incorrect PIN!");
+    return;
+  }
+
+  let articles = getArticles();
+  let article = articles.find(a => a.id === id);
+
+  if(article) {
+    let newTitle = prompt("Edit Title:", article.title);
+    let newContent = prompt("Edit Content:", article.content);
+
+    if(newTitle && newContent) {
+      article.title = newTitle;
+      article.content = newContent;
+      localStorage.setItem('aac_articles', JSON.stringify(articles));
+      renderArticles();
+    }
+  }
+}
+
+// DELETE ARTICLE (ADMIN ONLY)
+function deleteArticle(id) {
+  let pin = prompt("Enter Admin Security PIN to Delete:");
+  if(pin !== ADMIN_PIN) {
+    alert("Incorrect PIN!");
+    return;
+  }
+
+  if(confirm("Are you sure you want to delete this article?")) {
+    let articles = getArticles();
+    articles = articles.filter(a => a.id !== id);
+    localStorage.setItem('aac_articles', JSON.stringify(articles));
+    renderArticles();
+  }
+}
+
+// LIKE ARTICLE
+function likeArticle(id) {
+  let articles = getArticles();
+  let article = articles.find(a => a.id === id);
+  if(article) {
+    article.likes += 1;
+    localStorage.setItem('aac_articles', JSON.stringify(articles));
+    renderArticles();
+  }
+}
+
+// ADD COMMENT
+function addComment(id) {
+  let input = document.getElementById(`input-comment-${id}`);
+  let text = input.value.trim();
+  if(!text) return;
+
+  let articles = getArticles();
+  let article = articles.find(a => a.id === id);
+  if(article) {
+    article.comments.push(text);
+    localStorage.setItem('aac_articles', JSON.stringify(articles));
+    renderArticles();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderArticles();
+});
 </script>
 
 </body>
-  </html>
-  
+</html>
