@@ -23,7 +23,7 @@
         }
 
         .container { 
-            max-width: 850px; 
+            max-width: 900px; 
             margin: auto; 
             background: #ffffff; 
             padding: 25px; 
@@ -197,9 +197,9 @@
         .comments-section { background: var(--light-yellow); padding: 12px; border-radius: 8px; border: 1px solid #fff59d; }
         .comment-item { border-bottom: 1px solid #fff099; padding: 8px 0; font-size: 13px; }
         .comment-item:last-child { border-bottom: none; }
-        .comment-input-group { display: flex; gap: 8px; margin-top: 10px; }
+        .comment-input-group { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
         .comment-input-group input { margin-bottom: 0; background: #fff; }
-        .comment-input-group button { width: auto; padding: 8px 15px; font-size: 13px; margin-bottom: 0; }
+        .comment-input-group button { width: auto; padding: 8px 15px; font-size: 13px; margin-bottom: 0; align-self: flex-start; }
     </style>
     
     <!-- Firebase SDK Scripts -->
@@ -223,10 +223,11 @@
         </div>
     </div>
 
-    <!-- Scrollable Menu Tabs -->
+    <!-- Category Menu Bar (Story Option Added) -->
     <div class="category-menu">
         <button class="menu-btn active" onclick="filterArticles('All', this)">All</button>
         <button class="menu-btn" onclick="filterArticles('English Speaking Script', this)">English Speaking Script</button>
+        <button class="menu-btn" onclick="filterArticles('Story', this)">📖 Story</button>
         <button class="menu-btn" onclick="filterArticles('Motivation', this)">Motivation</button>
         <button class="menu-btn" onclick="filterArticles('Daily Use English Sentences', this)">Daily Use Sentences</button>
         <button class="menu-btn" onclick="filterArticles('Spoken Friendly Vocabulary', this)">Vocabulary</button>
@@ -234,7 +235,7 @@
         <button class="menu-btn" onclick="filterArticles('Translation Structures', this)">Translation</button>
     </div>
 
-    <!-- Admin Panel (Only visible to admin) -->
+    <!-- Admin Panel -->
     <div id="adminPanel" class="admin-panel">
         <h3 id="panelTitle">Admin Panel - Post New Content</h3>
         <input type="hidden" id="editArticleId">
@@ -242,6 +243,7 @@
         
         <select id="category">
             <option value="English Speaking Script">English Speaking Script</option>
+            <option value="Story">Story</option>
             <option value="Motivation">Motivation</option>
             <option value="Daily Use English Sentences">Daily Use English Sentences</option>
             <option value="Spoken Friendly Vocabulary">Spoken Friendly Vocabulary</option>
@@ -515,12 +517,10 @@
                             <strong style="color: var(--dark-text);">Comments:</strong>
                             <div id="comments-list-${key}" style="margin-top: 8px;">${commentsHTML}</div>
                             
-                            <div class="comment-input-group" style="flex-direction: column; margin-top: 10px;">
-                                <input type="text" id="comment-name-${key}" placeholder="Your Name (Optional)" style="margin-bottom: 5px;">
-                                <div style="display: flex; gap: 8px;">
-                                    <input type="text" id="comment-input-${key}" placeholder="Write a comment...">
-                                    <button class="btn-green" onclick="addComment('${key}')">Send</button>
-                                </div>
+                            <div class="comment-input-group">
+                                <input type="text" id="comment-name-${key}" placeholder="Your Name (Optional)">
+                                <input type="text" id="comment-input-${key}" placeholder="Write a comment...">
+                                <button class="btn-green" onclick="addComment('${key}')">Post</button>
                             </div>
                         </div>
                     </div>
@@ -529,10 +529,10 @@
             });
 
             if (count === 0) {
-                articlesDiv.innerHTML = '<p style="text-align:center; color:#666;">No posts found in this category.</p>';
+                articlesDiv.innerHTML = '<p style="text-align:center; color:#777;">No articles found in this category.</p>';
             }
         } else {
-            articlesDiv.innerHTML = '<p style="text-align:center; color:#666;">No content available.</p>';
+            articlesDiv.innerHTML = '<p style="text-align:center; color:#777;">No posts available yet.</p>';
         }
     }
 </script>
