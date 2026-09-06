@@ -42,7 +42,7 @@
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .yt-btn { 
@@ -74,6 +74,36 @@
             gap: 6px;
         }
         .follow-btn:hover { background-color: #fdd835; }
+
+        /* Category Menu Bar */
+        .category-menu {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-top: 1px solid #c8e6c9;
+            border-bottom: 1px solid #c8e6c9;
+            scrollbar-width: thin;
+        }
+        .menu-btn {
+            white-space: nowrap;
+            background: var(--light-green);
+            color: var(--dark-text);
+            border: 1px solid #a5d6a7;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            width: auto;
+            margin-bottom: 0;
+        }
+        .menu-btn.active {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
 
         /* Admin Panel */
         .admin-panel { 
@@ -193,6 +223,17 @@
         </div>
     </div>
 
+    <!-- Scrollable Menu Tabs -->
+    <div class="category-menu">
+        <button class="menu-btn active" onclick="filterArticles('All', this)">All</button>
+        <button class="menu-btn" onclick="filterArticles('English Speaking Script', this)">English Speaking Script</button>
+        <button class="menu-btn" onclick="filterArticles('Motivation', this)">Motivation</button>
+        <button class="menu-btn" onclick="filterArticles('Daily Use English Sentences', this)">Daily Use Sentences</button>
+        <button class="menu-btn" onclick="filterArticles('Spoken Friendly Vocabulary', this)">Vocabulary</button>
+        <button class="menu-btn" onclick="filterArticles('Conversation', this)">Conversation</button>
+        <button class="menu-btn" onclick="filterArticles('Translation Structures', this)">Translation</button>
+    </div>
+
     <!-- Admin Panel (Only visible to admin) -->
     <div id="adminPanel" class="admin-panel">
         <h3 id="panelTitle">Admin Panel - Post New Content</h3>
@@ -213,7 +254,7 @@
     </div>
 
     <!-- Articles List -->
-    <h2 style="color: var(--primary-green);">Latest Content</h2>
+    <h2 style="color: var(--primary-green);" id="sectionHeading">Latest Content</h2>
     <div id="articles">Loading content...</div>
 </div>
 
@@ -232,6 +273,8 @@
     const database = firebase.database();
 
     let isUserAdmin = false;
+    let selectedCategory = 'All';
+    let allArticlesData = null;
 
     // Check Admin Access via URL query (?admin=true)
     const urlParams = new URLSearchParams(window.location.search);
@@ -365,6 +408,15 @@
         }
     }
 
+    // Filter Category Menu
+    function filterArticles(category, btn) {
+        selectedCategory = category;
+        document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        document.getElementById('sectionHeading').innerText = category === 'All' ? 'Latest Content' : category;
+        renderArticles();
+    }
+
     // Follow System
     let isFollowing = localStorage.getItem('isFollowing') === 'true';
     
@@ -396,14 +448,26 @@
 
     // Fetch and Display Content
     database.ref('articles').on('value', (snapshot) => {
+        allArticlesData = snapshot.val();
+        renderArticles();
+    });
+
+    function renderArticles() {
         const articlesDiv = document.getElementById('articles');
         articlesDiv.innerHTML = '';
-        const data = snapshot.val();
 
-        if (data) {
-            Object.keys(data).reverse().forEach(key => {
-                const item = data[key];
-                
+        if (allArticlesData) {
+            let keys = Object.keys(allArticlesData).reverse();
+            let count = 0;
+
+            keys.forEach(key => {
+                const item = allArticlesData[key];
+
+                if (selectedCategory !== 'All' && item.category !== selectedCategory) {
+                    return;
+                }
+                count++;
+
                 let commentsHTML = '';
                 if (item.comments) {
                     Object.keys(item.comments).forEach(cKey => {
@@ -452,12 +516,15 @@
                 `;
                 articlesDiv.appendChild(articleEl);
             });
+
+           if (count === 0) {
+                articlesDiv.innerHTML = '<p style="color:#666;">No posts in this category yet.</p>';
+            }
         } else {
             articlesDiv.innerHTML = '<p>No content posted yet.</p>';
         }
-    });
+    }
 </script>
 
 </body>
-    </html>
-    
+</html>
