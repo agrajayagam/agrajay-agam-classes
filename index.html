@@ -1,341 +1,130 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Agrajay Agam Classes | Master Spoken English</title>
-<!-- Google Search Console Verification Meta Tag preserved -->
-<meta name="google-site-verification" content="zZyRRylPLu_fXIkk_ljZdHJ3jmLL9KL8zZcXPEFz530" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root {
-  --brand-green: #15803d;  
-  --light-green: #22c55e;  
-  --brand-yellow: #facc15; 
-  --dark-yellow: #ca8a04;  
-  --bg-yellow: #fefce8;    
-  --dark: #0f172a;
-  --text: #1e293b;
-}
-
-*{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
-body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background:#f8fafc; color:var(--text); line-height:1.6;}
-
-/* NAVIGATION */
-header{
-  background: var(--brand-green);
-  color:white; padding:15px 4%; display:flex; justify-content:space-between;
-  align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 4px 15px rgba(0,0,0,0.15);
-}
-.brand{font-size:18px; font-weight:800; color:#fff;}
-.brand span{color:var(--brand-yellow);}
-.brand small{display:block; font-size:10px; font-weight:400; color:#dcfce7;}
-nav{display:flex; align-items:center; gap:12px;}
-.yt-btn{background:#ef4444; color:white!important; padding:8px 16px; border-radius:20px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:bold;}
-
-section{padding:35px 4%; max-width:900px; margin:0 auto;}
-.section-title{text-align:center; margin-bottom:25px;}
-.section-title h1{font-size:24px; color:var(--brand-green); margin-bottom:5px;}
-.section-title p{color:#64748b; font-size:14px;}
-
-/* ARTICLES / BLOG SECTION */
-.category-filter{
-  display:flex; gap:8px; overflow-x:auto; padding-bottom:12px; margin-bottom:25px;
-}
-.cat-badge{
-  background:white; border:1px solid var(--brand-green); color:var(--brand-green);
-  padding:8px 16px; border-radius:20px; font-size:12px; font-weight:bold; cursor:pointer; white-space:nowrap;
-  transition: all 0.2s ease;
-}
-.cat-badge.active, .cat-badge:hover{
-  background:var(--brand-green); color:white;
-}
-
-.admin-panel{
-  background:white; border:2px dashed var(--brand-green); border-radius:12px; padding:20px; margin-bottom:30px; box-shadow:0 2px 8px rgba(0,0,0,0.04);
-}
-.admin-panel h4{color:var(--brand-green); margin-bottom:12px; font-size:16px;}
-.admin-panel input, .admin-panel select, .admin-panel textarea{
-  width:100%; margin-bottom:12px; padding:10px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; font-family:inherit;
-}
-
-.btn{
-  width:100%; padding:12px; border-radius:8px; font-weight:bold;
-  text-decoration:none; border:none; cursor:pointer; display:inline-flex;
-  align-items:center; justify-content:center; gap:8px; font-size:14px; text-align:center;
-}
-.btn-green{background:var(--brand-green); color:white;}
-
-.article-card{
-  background:white; border-radius:14px; border:1px solid #e2e8f0; margin-bottom:20px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.03);
-}
-.article-tag{
-  display:inline-block; background:var(--bg-yellow); color:var(--dark-yellow); font-size:11px; font-weight:bold; padding:4px 10px; border-radius:6px; margin-bottom:10px; border:1px solid var(--brand-yellow);
-}
-.article-card h3{color:var(--brand-green); font-size:20px; margin-bottom:10px;}
-.article-body{font-size:15px; color:#334155; line-height:1.7; margin-bottom:15px; white-space:pre-line;}
-
-.article-actions{
-  display:flex; gap:12px; align-items:center; border-top:1px solid #f1f5f9; padding-top:12px; margin-top:10px; flex-wrap:wrap;
-}
-.like-btn{
-  background:none; border:none; color:#ef4444; font-size:14px; cursor:pointer; font-weight:bold; display:flex; align-items:center; gap:6px;
-}
-.admin-btn{
-  background:none; border:none; color:#64748b; font-size:12px; cursor:pointer; margin-left:auto; text-decoration:underline;
-}
-
-.comment-box{
-  background:#f8fafc; border-radius:8px; padding:12px; margin-top:12px; font-size:13px; border:1px solid #e2e8f0;
-}
-.comment-input-group{display:flex; gap:8px; margin-top:10px;}
-.comment-input-group input{flex:1; padding:8px 12px; border:1px solid #cbd5e1; border-radius:6px; font-size:13px;}
-
-footer{background:var(--brand-green); color:#dcfce7; text-align:center; padding:30px 4%; font-size:13px; margin-top:40px;}
-footer a{color:var(--brand-yellow); text-decoration:none;}
-
-@media(max-width:600px){
-  header{padding:12px 4%;}
-  .brand{font-size:16px;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrajay Agam Classes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        .admin-panel { display: none; background: #eef; padding: 15px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccd; }
+        input, textarea, button { width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box; }
+        button { background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; }
+        button:hover { background-color: #0056b3; }
+        .article { background: #fff; padding: 15px; border-bottom: 1px solid #ddd; margin-bottom: 15px; }
+        .article h3 { margin-top: 0; color: #007bff; }
+    </style>
+    <!-- Firebase SDK Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
 
-<header>
-  <div class="brand">Agrajay Agam <span>Classes</span><small>Speak English with Confidence</small></div>
-  <nav>
-    <a href="https://youtube.com/@agrajayagamclasses" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
-  </nav>
-</header>
+<div class="container">
+    <h1>Agrajay Agam Classes</h1>
 
-<section id="articles">
-  <div class="section-title">
-    <h1>📚 Spoken English Written Articles</h1>
-    <p>विषय चुनें और विस्तार से स्पोकन इंग्लिश के नियम व उदाहरण पढ़ें</p>
-  </div>
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <h3>Admin Panel - Post New Article</h3>
+        <input type="text" id="title" placeholder="Article Title">
+        <textarea id="content" rows="5" placeholder="Article Content"></textarea>
+        <button onclick="postArticle()">Publish Article</button>
+    </div>
 
-  <!-- Category Filter Badges -->
-  <div class="category-filter" id="categoryFilter">
-    <button class="cat-badge active" onclick="filterArticles('All')">All Topics</button>
-    <button class="cat-badge" onclick="filterArticles('English Speaking Script')">English Speaking Script</button>
-    <button class="cat-badge" onclick="filterArticles('Motivation')">Motivation</button>
-    <button class="cat-badge" onclick="filterArticles('Daily Use English Sentences')">Daily Use Sentences</button>
-    <button class="cat-badge" onclick="filterArticles('Spoken Friendly Vocabulary')">Vocabulary</button>
-    <button class="cat-badge" onclick="filterArticles('Conversation')">Conversation</button>
-    <button class="cat-badge" onclick="filterArticles('Spoken English Tips For Beginners')">Beginner Tips</button>
-    <button class="cat-badge" onclick="filterArticles('Translation Structures With Examples')">Translation Structures</button>
-  </div>
-
-  <!-- Admin Panel for Adding Articles (Protected with Admin PIN) -->
-  <div class="admin-panel">
-    <h4><i class="fa-solid fa-pen-to-square"></i> Admin Panel (Add New Article)</h4>
-    <select id="postCategory">
-      <option value="English Speaking Script">English Speaking Script</option>
-      <option value="Motivation">Motivation</option>
-      <option value="Daily Use English Sentences">Daily Use English Sentences</option>
-      <option value="Spoken Friendly Vocabulary">Spoken Friendly Vocabulary</option>
-      <option value="Conversation">Conversation</option>
-      <option value="Spoken English Tips For Beginners">Spoken English Tips For Beginners</option>
-      <option value="Translation Structures With Examples">Translation Structures With Examples</option>
-    </select>
-    <input type="text" id="postTitle" placeholder="Article Title (शीर्षक)">
-    <textarea id="postContent" style="height:120px;" placeholder="Write full article content here... (पूरा आर्टिकल लिखें)"></textarea>
-    <button class="btn btn-green" onclick="addNewArticle()"><i class="fa-solid fa-paper-plane"></i> Publish Article</button>
-  </div>
-
-  <!-- Articles Container -->
-  <div id="articlesContainer"></div>
-</section>
-
-<footer>
-  <p><b>Agrajay Agam Classes</b> • Learn English & Speak with Confidence</p>
-  <p style="margin-top:8px;"><a href="https://youtube.com/@agrajayagamclasses" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> Visit YouTube Channel</a></p>
-</footer>
+    <!-- Articles List -->
+    <h2>Latest Articles</h2>
+    <div id="articles">Loading articles...</div>
+</div>
 
 <script>
-// ADMIN SECURITY PIN
-const ADMIN_PIN = "1234"; // केवल आपका सुरक्षा पिन
+    // Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCFcPEAFCOB_0U-H__I0rZ7v2xsmNCkHhI",
+      authDomain: "agrajay-agam-classes.firebaseapp.com",
+      databaseURL: "https://agrajay-agam-classes-default-rtdb.firebaseio.com",
+      projectId: "agrajay-agam-classes",
+      storageBucket: "agrajay-agam-classes.firebasestorage.app",
+      messagingSenderId: "205657019628",
+      appId: "1:205657019628:web:fb83a3b728b351d62a81c9"
+    };
 
-// INITIAL DEMO ARTICLES DATA
-const defaultArticles = [
-  {
-    id: 1,
-    category: "Translation Structures With Examples",
-    title: "Structure: 'Subject + is/am/are + Used to + V1+ing'",
-    content: "इस स्ट्रक्चर का उपयोग किसी चीज़ की आदत होने (Habitual) को दर्शाने के लिए किया जाता है।\n\nExample 1: मुझे सुबह जल्दी उठने की आदत है।\n-> I am used to getting up early in the morning.\n\nExample 2: उसे अंग्रेजी में बोलने की आदत है।\n-> He is used to speaking in English.",
-    likes: 5,
-    comments: ["बहुत उपयोगी जानकारी सर!"]
-  }
-];
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
 
-// LOAD ARTICLES FROM LOCALSTORAGE
-function getArticles() {
-  let stored = localStorage.getItem('aac_articles');
-  if(!stored) {
-    localStorage.setItem('aac_articles', JSON.stringify(defaultArticles));
-    return defaultArticles;
-  }
-  return JSON.parse(stored);
-}
+    // Check for Admin Access
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAdmin = urlParams.get('admin');
 
-// RENDER ARTICLES
-function renderArticles(filter = 'All') {
-  const container = document.getElementById('articlesContainer');
-  const articles = getArticles();
-  container.innerHTML = "";
-
-  const filtered = (filter === 'All') ? articles : articles.filter(a => a.category === filter);
-
-  if(filtered.length === 0) {
-    container.innerHTML = "<p style='text-align:center; color:#64748b; padding:20px;'>इस श्रेणी में अभी कोई आर्टिकल पोस्ट नहीं हुआ है।</p>";
-    return;
-  }
-
-  filtered.forEach(article => {
-    let card = document.createElement('div');
-    card.className = 'article-card';
-    
-    let commentsHtml = article.comments.map(c => `<div style="margin-bottom:4px;">💬 ${c}</div>`).join('');
-
-    card.innerHTML = `
-      <span class="article-tag">${article.category}</span>
-      <h3>${article.title}</h3>
-      <div class="article-body">${article.content}</div>
-      
-      <div class="article-actions">
-        <button class="like-btn" onclick="likeArticle(${article.id})">
-          ❤️ <span>${article.likes}</span> Likes
-        </button>
-        <button class="admin-btn" onclick="editArticle(${article.id})">Edit</button>
-        <button class="admin-btn" style="color:#ef4444;" onclick="deleteArticle(${article.id})">Delete</button>
-      </div>
-
-      <div class="comment-box">
-        <b>Comments (${article.comments.length}):</b>
-        <div id="comments-${article.id}" style="margin-top:6px;">${commentsHtml || "<span style='color:#94a3b8;'>कोई कमेंट नहीं है। पहला कमेंट करें!</span>"}</div>
-        <div class="comment-input-group">
-          <input type="text" id="input-comment-${article.id}" placeholder="Write a comment...">
-          <button class="btn btn-green" style="padding:6px 12px; font-size:12px; width:auto;" onclick="addComment(${article.id})">Post</button>
-        </div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
-
-// FILTER ARTICLES BY CATEGORY
-function filterArticles(cat) {
-  document.querySelectorAll('.cat-badge').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  renderArticles(cat);
-}
-
-// ADD NEW ARTICLE (ADMIN ONLY)
-function addNewArticle() {
-  let pin = prompt("Enter Admin Security PIN to Publish:");
-  if(pin !== ADMIN_PIN) {
-    alert("Incorrect PIN! Only admin can add articles.");
-    return;
-  }
-
-  let cat = document.getElementById('postCategory').value;
-  let title = document.getElementById('postTitle').value.trim();
-  let content = document.getElementById('postContent').value.trim();
-
-  if(!title || !content) {
-    alert("Please fill both Title and Content.");
-    return;
-  }
-
-  let articles = getArticles();
-  let newArticle = {
-    id: Date.now(),
-    category: cat,
-    title: title,
-    content: content,
-    likes: 0,
-    comments: []
-  };
-
-  articles.unshift(newArticle);
-  localStorage.setItem('aac_articles', JSON.stringify(articles));
-  
-  document.getElementById('postTitle').value = "";
-  document.getElementById('postContent').value = "";
-  alert("Article Published Successfully!");
-  renderArticles();
-}
-
-// EDIT ARTICLE (ADMIN ONLY)
-function editArticle(id) {
-  let pin = prompt("Enter Admin Security PIN to Edit:");
-  if(pin !== ADMIN_PIN) {
-    alert("Incorrect PIN!");
-    return;
-  }
-
-  let articles = getArticles();
-  let article = articles.find(a => a.id === id);
-
-  if(article) {
-    let newTitle = prompt("Edit Title:", article.title);
-    let newContent = prompt("Edit Content:", article.content);
-
-    if(newTitle && newContent) {
-      article.title = newTitle;
-      article.content = newContent;
-      localStorage.setItem('aac_articles', JSON.stringify(articles));
-      renderArticles();
+    if (isAdmin === 'true') {
+        let pin = prompt("Enter Admin PIN:");
+        if (pin === "1234") {
+            document.getElementById('adminPanel').style.display = 'block';
+        } else {
+            alert("Incorrect PIN!");
+        }
     }
-  }
-}
 
-// DELETE ARTICLE (ADMIN ONLY)
-function deleteArticle(id) {
-  let pin = prompt("Enter Admin Security PIN to Delete:");
-  if(pin !== ADMIN_PIN) {
-    alert("Incorrect PIN!");
-    return;
-  }
+    // Shortcut: Ctrl + Shift + A to trigger Admin Mode
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+            let pin = prompt("Enter Admin PIN:");
+            if (pin === "1234") {
+                document.getElementById('adminPanel').style.display = 'block';
+            } else {
+                alert("Incorrect PIN!");
+            }
+        }
+    });
 
-  if(confirm("Are you sure you want to delete this article?")) {
-    let articles = getArticles();
-    articles = articles.filter(a => a.id !== id);
-    localStorage.setItem('aac_articles', JSON.stringify(articles));
-    renderArticles();
-  }
-}
+    // Function to Post Article to Firebase
+    function postArticle() {
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
 
-// LIKE ARTICLE
-function likeArticle(id) {
-  let articles = getArticles();
-  let article = articles.find(a => a.id === id);
-  if(article) {
-    article.likes += 1;
-    localStorage.setItem('aac_articles', JSON.stringify(articles));
-    renderArticles();
-  }
-}
+        if (title && content) {
+            const newArticleRef = database.ref('articles').push();
+            newArticleRef.set({
+                title: title,
+                content: content,
+                date: new Date().toLocaleDateString()
+            }, (error) => {
+                if (error) {
+                    alert("Error posting article: " + error.message);
+                } else {
+                    alert("Article published successfully!");
+                    document.getElementById('title').value = '';
+                    document.getElementById('content').value = '';
+                }
+            });
+        } else {
+            alert("Please fill in both title and content!");
+        }
+    }
 
-// ADD COMMENT
-function addComment(id) {
-  let input = document.getElementById(`input-comment-${id}`);
-  let text = input.value.trim();
-  if(!text) return;
+    // Fetch Articles from Firebase in Realtime
+    database.ref('articles').on('value', (snapshot) => {
+        const articlesDiv = document.getElementById('articles');
+        articlesDiv.innerHTML = '';
+        const data = snapshot.val();
 
-  let articles = getArticles();
-  let article = articles.find(a => a.id === id);
-  if(article) {
-    article.comments.push(text);
-    localStorage.setItem('aac_articles', JSON.stringify(articles));
-    renderArticles();
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderArticles();
-});
+        if (data) {
+            Object.keys(data).reverse().forEach(key => {
+                const article = data[key];
+                const articleElement = document.createElement('div');
+                articleElement.className = 'article';
+                articleElement.innerHTML = `
+                    <h3>${article.title}</h3>
+                    <small>Published on: ${article.date}</small>
+                    <p>${article.content}</p>
+                `;
+                articlesDiv.appendChild(articleElement);
+            });
+        } else {
+            articlesDiv.innerHTML = '<p>No articles posted yet.</p>';
+        }
+    });
 </script>
 
 </body>
