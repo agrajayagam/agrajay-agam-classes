@@ -383,10 +383,15 @@
     }
 
     function addComment(id) {
+        const nameInput = document.getElementById(`comment-name-${id}`);
         const input = document.getElementById(`comment-input-${id}`);
+        
+        const userName = nameInput.value.trim() || "Anonymous User";
         const text = input.value.trim();
+
         if (text) {
             database.ref(`articles/${id}/comments`).push({
+                name: userName,
                 text: text,
                 date: new Date().toLocaleDateString()
             });
@@ -471,7 +476,9 @@
                 let commentsHTML = '';
                 if (item.comments) {
                     Object.keys(item.comments).forEach(cKey => {
-                        commentsHTML += `<div class="comment-item">💬 ${item.comments[cKey].text}</div>`;
+                        const comment = item.comments[cKey];
+                        const author = comment.name ? comment.name : 'Anonymous User';
+                        commentsHTML += `<div class="comment-item">💬 <strong>${author}:</strong> ${comment.text}</div>`;
                     });
                 } else {
                     commentsHTML = '<div class="comment-item" style="color:#888;">No comments yet. Be the first to comment!</div>';
@@ -507,9 +514,13 @@
                         <div class="comments-section">
                             <strong style="color: var(--dark-text);">Comments:</strong>
                             <div id="comments-list-${key}" style="margin-top: 8px;">${commentsHTML}</div>
-                            <div class="comment-input-group">
-                                <input type="text" id="comment-input-${key}" placeholder="Write a comment...">
-                                <button class="btn-green" onclick="addComment('${key}')">Send</button>
+                            
+                            <div class="comment-input-group" style="flex-direction: column; margin-top: 10px;">
+                                <input type="text" id="comment-name-${key}" placeholder="Your Name (Optional)" style="margin-bottom: 5px;">
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="comment-input-${key}" placeholder="Write a comment...">
+                                    <button class="btn-green" onclick="addComment('${key}')">Send</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -517,11 +528,11 @@
                 articlesDiv.appendChild(articleEl);
             });
 
-                       if (count === 0) {
-                articlesDiv.innerHTML = '<p style="color:#666;">No posts in this category yet.</p>';
+            if (count === 0) {
+                articlesDiv.innerHTML = '<p style="text-align:center; color:#666;">No posts found in this category.</p>';
             }
         } else {
-            articlesDiv.innerHTML = '<p>No content posted yet.</p>';
+            articlesDiv.innerHTML = '<p style="text-align:center; color:#666;">No content available.</p>';
         }
     }
 </script>
